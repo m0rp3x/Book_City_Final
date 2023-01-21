@@ -1,0 +1,93 @@
+﻿@model IEnumerable<WebApplication2.Models.Book>
+ 
+<h2>Список книг</h2>
+<p><a asp-action="Create">Добавить книгу</a></p>
+
+
+
+
+<div class="jopa_card">
+   @foreach (var item in Model)
+   {
+        
+      <div class="product-item">
+         <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdrasler.ru%2Fwp-content%2Fuploads%2F2019%2F05%2F%25D0%259A%25D0%25BD%25D0%25B8%25D0%25B3%25D0%25B0-%25D0%25BD%25D0%25B0-%25D1%2581%25D1%2582%25D0%25BE%25D0%25BB%25D0%25B5-%25D1%2584%25D0%25BE%25D1%2582%25D0%25BE-%25D0%25B8-%25D0%25BA%25D0%25B0%25D1%2580%25D1%2582%25D0%25B8%25D0%25BD%25D0%25BA%25D0%25B8-012.jpg&f=1&nofb=1&ipt=57763652d7748ad57a15fc4f608115d4f33f9a4f48fc70cdaf7acdf791879ef8&ipo=images">
+         <div class="product-list">
+            <div class="bg"></div>
+            <div class="bg bg2"></div>
+            <div class="bg bg3"></div>
+            <h3>Название: @item.Name</h3>
+            <span class="price">Автор: @item.Author</span>
+         <a asp-action="Delete" asp-controller="Home" asp-route-id="@item.Id" class="button">Купить</a>
+         </div>
+      </div>
+      <br><br/>
+        
+   }
+</div>
+
+
+
+
+<style>
+    .jopa_card {
+        display: flex;
+          justify-content: space-between;
+            flex-wrap: wrap;
+    }
+    * {
+       box-sizing: border-box;
+    }
+    .product-item {
+    
+       width: 300px;
+       text-align: center;
+       margin: 0 auto;
+       border-bottom: 2px solid #F5F5F5;
+       background: white;
+       font-family: "Open Sans";
+       transition: .3s ease-in;
+    }
+    .product-item:hover {
+       border-bottom: 2px solid #fc5a5a;
+    }
+    .product-item img {
+       display: block;
+       width: 100%;
+    }
+    .product-list {
+       background: #fafafa;
+       padding: 15px 0;
+    }
+    .product-list h3 {
+       font-size: 18px;
+       font-weight: 400;
+       color: #444444;
+       margin: 0 0 10px 0;
+    }
+    .price {
+       font-size: 16px;
+       color: #fc5a5a;
+       display: block;
+       margin-bottom: 12px;
+    }
+    .button {
+       text-decoration: none;
+       display: inline-block;
+       padding: 0 12px;
+       background: #cccccc;
+       color: white;
+       text-transform: uppercase;
+       font-size: 12px;
+       line-height: 28px;
+       transition: .3s ease-in;
+    }
+    .product-item:hover .button {
+       background: #fc5a5a;
+    }
+</style>
+
+    
+
+    
+   
