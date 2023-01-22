@@ -59,5 +59,28 @@ namespace WebApplication2.Controllers
                     }
                     return NotFound();
                 }
+                
+                public async Task<IActionResult> Edit(int? id)
+                {
+                    if(id!=null)
+                    {
+                        Book booke = await db.Books.FirstOrDefaultAsync(p=>p.Id==id);
+                        if (booke != null)
+                            return View(booke);
+                    }
+                    return NotFound();
+                }
+                [HttpPost]
+                public async Task<IActionResult> Edit(Book booke)
+                {
+                    db.Books.Update(booke);
+                    await db.SaveChangesAsync();
+                    return RedirectToAction("Index");
+                }
+
+                public IActionResult Privacy()
+                {
+                    return View();
+                }
     }
 }
