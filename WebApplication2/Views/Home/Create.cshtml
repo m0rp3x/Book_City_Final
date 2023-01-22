@@ -2,15 +2,15 @@
  
 <h2>Добавление Книги</h2>
 <form asp-action="create" asp-controller="Home">
+    <div class="mb-3 row">
+            <label asp-for="Name" class="form-label">Название</label>
+            <input type="text" class="form-control" asp-for="Name">
+          </div>
+    <div class="mb-3 row">
+                <label asp-for="Author" class="form-label">Автор</label>
+    <input type="text" class="form-control" asp-for="Author">
+    </div>
     <p>
-        <label asp-for="Name">Название</label><br />
-        <input type="text" asp-for="Name" />
-    </p>
-    <p>
-        <label asp-for="Author">Автор</label><br />
-        <input type="text" asp-for="Author" />
-    </p>
-    <p>
-        <input type="submit" value="Отправить" />
+        <input type="submit" class="btn btn-primary mb-3" value="Отправить" />
     </p>
 </form>
