@@ -2,7 +2,14 @@
  
 <h2>Список книг</h2>
 
+            <a class="btn btn-primary" asp-action="Index" asp-route-sortOrder="@ViewBag.NameSort">По Названию</a>
+            <a class="btn btn-primary" asp-action="Index" asp-route-sortOrder="@ViewBag.AgeSort">По дате Публикации</a>
+            <a  class="btn btn-primary"  asp-action="Index" asp-route-sortOrder="@ViewBag.AuthorSort">По Автору</a>
+            <a class="btn btn-primary" asp-action="Index" asp-route-sortOrder="@ViewBag.TagSort">По жанру</a>
 
+
+            
+   
 
 
 
@@ -17,7 +24,7 @@
             <div class="bg bg2"></div>
             <div class="bg bg3"></div>
             <h3>Название: @item.Name</h3>
-            <span class="price">Автор: @item.Author</span>
+            <span class="price">Автор: @item.Author.Name</span>
          <a asp-action="Delete" asp-controller="Home" asp-route-id="@item.Id" class="button">Купить</a>
          </div>
       </div>
@@ -31,6 +38,7 @@
 
 <style>
     .jopa_card {
+    margin-top: 20px;
         display: flex;
           justify-content: space-between;
             flex-wrap: wrap;
