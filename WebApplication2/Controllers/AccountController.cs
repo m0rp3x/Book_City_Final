@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
-using WebApplication2.Models; // пространство имен моделей RegisterModel и LoginModel
+using WebApplication2.Models; 
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
  

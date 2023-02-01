@@ -1,0 +1,25 @@
+@model Order?
+
+
+
+<h2>Детали заказа</h2>
+<div>
+    <dl class="dl-horizontal">
+        <dt>Идентификатор</dt>
+        <dd>@Model.OrderID</dd>
+        
+        <dt>Артикль Книжки</dt>
+        <dd>@Model.BookID</dd>
+        <dt>Город Отправки</dt>
+        <dl>@Model.CitySent</dl>
+        <dt>Адресс Отправки</dt>
+        <dd>@Model.AddressSent</dd>
+        <dt>Город Получения</dt>
+        <dd>@Model.CityReceived</dd>
+        <dt>Адресс Получения</dt>
+        <dd>@Model.AddressReceived</dd>
+        <dd>Вес книги</dd>
+        <dd>@Model.weight</dd>
+        
+    </dl>
+</div>

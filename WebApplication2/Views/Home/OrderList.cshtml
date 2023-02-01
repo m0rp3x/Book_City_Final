@@ -1,0 +1,25 @@
+@model IEnumerable<WebApplication2.Models.Order>
+@{
+    ViewBag.Title = "Список заказов";  
+}
+
+
+
+<h2>Список заказов</h2>
+<table class="table">
+    <tr><td>Заказанная Книга</td><td>Адресс доставки</td><td>Детали</td><td>Роспись в Получении</td></tr>
+    @foreach (var item in Model)
+    {
+            <tr><td>@item.Book.Name</td>
+                <td>@item.AddressReceived</td>
+                <td>  
+                    <a asp-action="Details" asp-controller="Home" asp-route-id="@item.OrderID">Детали Заказа</a> 
+                </td>
+                <td>
+                    <a asp-action="DeleteOrder" asp-controller="Home" asp-route-id="@item.OrderID">Получение</a>
+                </td>                
+            </tr>
+                                          
+                                          
+    }
+</table>

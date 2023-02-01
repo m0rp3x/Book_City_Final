@@ -1,0 +1,12 @@
+@model WebApplication2.Models.Order;
+ 
+<h2>Вы уверены что книга Доставлена?</h2>
+<form asp-action="DeleteOrder" asp-controller="Home">
+    <div class="mb-3 row">
+        <label asp-for="OrderID" class="form-label">Номер Заказа</label>
+        <input type="text" class="form-control" asp-for="OrderID">
+    </div>
+    <p>
+        <input type="submit" class="btn btn-primary mb-3" value="Доставлено" />
+    </p>
+</form>

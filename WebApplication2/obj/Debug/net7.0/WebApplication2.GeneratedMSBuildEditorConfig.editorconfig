@@ -24,6 +24,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/koval/RiderProjects/WebApplication2/WebApplication2/Views/Home/DeleteOrder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZWxldGVPcmRlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/koval/RiderProjects/WebApplication2/WebApplication2/Views/Home/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -38,6 +42,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/koval/RiderProjects/WebApplication2/WebApplication2/Views/Home/Order.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxPcmRlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/koval/RiderProjects/WebApplication2/WebApplication2/Views/Home/OrderList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxPcmRlckxpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/koval/RiderProjects/WebApplication2/WebApplication2/Views/Home/Privacy.cshtml]

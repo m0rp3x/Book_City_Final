@@ -185,7 +185,7 @@ books = sortOrder switch
                     db.Set<Order>().AsNoTracking();
                     db.Entry(order).State = EntityState.Modified;
                     await db.AddAsync(order);
-                    await db.SaveChangesAsync(); ;
+                    await db.SaveChangesAsync();
                     
                     
                     return await Task.FromResult<IActionResult>(RedirectToAction("Index"));
@@ -196,9 +196,47 @@ books = sortOrder switch
                 {
                     if (id != null)
                     {
-                        Order order = await db.Orders.FirstOrDefaultAsync(p => p.OrderID == id);
-                        if (order != null)
-                            return View(Details);
+                        Order user = await db.Orders.FirstOrDefaultAsync(p => p.OrderID == id);
+                        if (user != null)
+                            return View(user);
+                    }
+                    return NotFound();
+                    return NotFound();
+                }
+                public async Task<IActionResult> OrderList()
+                {
+                    IQueryable<Order> orders = db.Orders.Include(x => x.Book);
+                    return View(await orders.AsNoTracking().ToListAsync());
+                }
+                
+                [HttpGet]
+                [ActionName("DeleteOrder")]
+                public async Task<IActionResult> ConfirmDeleteOrder(int? id)
+                {
+                    if (id != null)
+                    {
+                        Order userBook = await db.Orders.FirstOrDefaultAsync(p => p.OrderID == id);
+                        if (userBook != null)
+                            return View(userBook);
+                    }
+                    return NotFound();
+                }
+                
+                
+                [HttpPost]
+                public async Task<IActionResult> DeleteOrder(int? id)
+                {
+                    if (id != null)
+                    {
+                        Order booksBook = await db.Orders.FirstOrDefaultAsync(p => p.OrderID == id);
+                        if (booksBook != null)
+                        {
+                            db.Orders.Remove(booksBook );
+                            await db.SaveChangesAsync();
+                           
+                            return RedirectToAction("Index");
+                           
+                        }
                     }
                     return NotFound();
                 }
