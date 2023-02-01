@@ -25,7 +25,8 @@
             <div class="bg bg3"></div>
             <h3>Название: @item.Name</h3>
             <span class="price">Автор: @item.Author.Name</span>
-         <a asp-action="Delete" asp-controller="Home" asp-route-id="@item.Id" class="button">Купить</a>
+            <a asp-action="Delete" asp-controller="Home" asp-route-id="@item.ID" class="button">Купить</a>
+            <a asp-action="Order" asp-controller="Home" asp-route-id="@item.ID" class="button">Купить</a>
          </div>
       </div>
       <br><br/>
@@ -38,6 +39,7 @@
 
 <style>
     .jopa_card {
+    
     margin-top: 20px;
         display: flex;
           justify-content: space-between;
@@ -47,8 +49,8 @@
        box-sizing: border-box;
     }
     .product-item {
-    
-       width: 300px;
+       display: block;
+       width: 200px;
        text-align: center;
        margin: 0 auto;
        border-bottom: 2px solid #F5F5F5;

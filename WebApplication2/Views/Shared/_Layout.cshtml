@@ -37,11 +37,101 @@
                         <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">О нас</a>
                     </li>
                     <li class="nav-item">
-                                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Create">Админка</a>
-                                        </li>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Create">Админка</a>
+                    </li>
+                    
+                    
+                    
                 </ul>
             </div>
         </div>
+         <div>
+                        <ul class="navbar-nav flex-grow-1">
+                            @if (User.Identity!.IsAuthenticated)
+                            {
+                                <li class="nav-item" style="padding-top: 8px">Здравствуйте, @User.Identity.Name</li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Logout">Выход</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <!-- Кнопка-триггер модального окна -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#LoginModal">
+                                    Войти
+                                </button>
+                                <button type="button" class="btn btn" data-bs-toggle="modal" data-bs-target="#RegisterModal">
+                                    Регистрация
+                                </button>
+                                <!-- Модальное окно -->
+                                <div class="modal fade" id="LoginModal" tabindex="0" aria-labelledby="LoginModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Вход</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                                            </div>
+                                            <div>
+                                                <button type="buttin" class="btn btn" data-bs-toggle="modal" data-bs-target="#RegisterModal">
+                                                    Регистрация
+                                                </button>
+                                            </div>
+                                            @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+                                            {
+                                                <div class="modal-body">
+                                                    <div>
+                                                        <label>Введите Email</label>
+                                                        <input type="text" name="Email" id="Email"/>
+                                                    </div>
+                                                    <div>
+                                                        <label >Введите Пароль</label>
+                                                        <input type="password" name="Password" id="Password"/>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <div>
+                                                        <input type="submit" value="Войти" class="btn btn-outline-dark"/>
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                                                    </div>
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal fade" id="RegisterModal" tabindex="0" aria-labelledby="RegisterModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Регистрация</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                                            </div>
+                                            @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+                                            {
+                                                <div class="modal-body">
+                                                    <div>
+                                                        <label>Введите Email</label>
+                                                        <input type="text" name="Email" id="Email"/>
+                                                    </div>
+                                                    <div>
+                                                        <label >Введите Пароль</label>
+                                                        <input type="password" name="Password" id="Password"/>
+                                                    </div>
+                                                    
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <div>
+                                                        <input type="submit" value="Войти" class="btn btn-outline-dark"/>
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                                                    </div>
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </ul>
+                    </div>
+        
     </nav>
 </header>
 <div class="container">

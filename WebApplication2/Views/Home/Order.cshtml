@@ -1,0 +1,40 @@
+﻿@model Order?
+ 
+
+<h2>Добавление Заказа</h2>
+<form asp-action="Order" asp-controller="home" asp-route-id="@if (Model != null) {@Model.OrderID }">
+    
+    
+    
+    
+
+
+    <div class="mb-3 row">
+        <label asp-for="Book.ID" class="form-label">Название</label>
+        <input type="text" class="form-control" asp-for="Book.ID">
+    </div>
+    <div class="mb-3 row">
+        <label asp-for="CitySent" class="form-label">Город отправки</label>
+        <input type="text" class="form-control" asp-for="CitySent">
+    </div>
+    <div class="mb-3 row">
+        <label asp-for="AddressSent" class="form-label">Адресс Магазина</label>
+        <input type="text" class="form-control" asp-for="AddressSent">
+    </div>
+
+    <div class="mb-3 row">
+        <label asp-for="CityReceived" class="form-label">Город получения</label>
+        <input type="text" class="form-control" asp-for="CityReceived">
+    </div>
+    <div class="mb-3 row">
+        <label asp-for="AddressReceived" class="form-label">Адресс Получения</label>
+        <input type="text" class="form-control" asp-for="AddressReceived">
+    </div>
+    <div class="mb-3 row">
+        <label asp-for="weight" class="form-label">Вес Товары</label>
+        <input type="text" class="form-control" asp-for="weight">
+    </div>
+    <p>
+        <input type="submit" class="btn btn-primary mb-3" value="Отправить"/>
+    </p>
+</form>
