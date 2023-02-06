@@ -33,7 +33,7 @@ public class Book
 
 
     public Order  Order { get;set; }
-   
+
 
 }
 
@@ -45,30 +45,40 @@ public class Author
     public int AuthorID { get; set; }
 
     public string Name { get; set; }
-
-    
-
 }
 
 [PrimaryKey("OrderID")]
-public class Order
-{
+public class Order {
     public int OrderID { get; set; }
     [ForeignKey("ID")]
-    public int BookID { get; set; } 
-    
-    
-    
-    [Key]
-    [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+    public int BookID { get; set; }
     public Book? Book { get; set; }
-    
     public string CitySent { get; set; }
     public string CityReceived { get; set; }
     public string AddressSent { get; set; }
     public string AddressReceived { get; set; }
     public string weight { get; set; }
+    
+    [ForeignKey("AccID")]
+    public int AccountID { get; set; }
+    public  Account? Account { get; set; }
+    
 }
+
+[PrimaryKey("AccID")]
+
+public class Account
+{
+    [ForeignKey("AccountID")]
+
+    public int AccID { get; set; }
+    public string Email { get; set; }
+    public string Password { get; set; }
+    
+
+
+}
+
 public enum SortState
 {
     NameAsc,
@@ -80,3 +90,4 @@ public enum SortState
     TagAsc,
     TagDesc
 }
+

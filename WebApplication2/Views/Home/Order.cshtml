@@ -1,14 +1,16 @@
 ﻿@model Order?
  
 
+@{
+    ViewData["Title"] = "Order";
+}
+
+<form asp-action="Order" asp-controller="Home">
 <h2>Добавление Заказа</h2>
-<form asp-action="Order" asp-controller="home" asp-route-id="@if (Model != null) {@Model.OrderID }">
-    
-    
-    
-    
-
-
+    <div class="mb-3 row">
+            <label asp-for="@User. class="form-label">Ваш аккаунт</label>
+            <input type="text" class="form-control" asp-for="@User.Identities">
+        </div>
     <div class="mb-3 row">
         <label asp-for="Book.ID" class="form-label">Артикль</label>
         <input type="text" class="form-control" asp-for="Book.ID">

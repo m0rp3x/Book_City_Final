@@ -17,6 +17,9 @@ namespace WebApplication2.Controllers
         {
             db = context;
             
+            
+            
+            
           
            
 
@@ -151,29 +154,34 @@ books = sortOrder switch
                 }
                 public async Task<IActionResult> Order(int? id)
                 {
-                    
-
-                    
-                  
-                 
-                    
-                    //Order Book Id search
-                    
                     if (id != null)
                     {
                         await db.Database.ExecuteSqlRawAsync("SET IDENTITY_INSERT dbo.Books ON");
 
                             Order order = new Order();
                             order.Book = await db.Books.FirstOrDefaultAsync(p => p.ID == id);
+                            order.Account = await db.Accounts.FirstOrDefaultAsync(a => a.AccID == id);
                             if (order != null)
                                 return View(order);
+                    }
+                    if (id != null)
+                    {
+                        await db.Database.ExecuteSqlRawAsync("SET IDENTITY_INSERT dbo.Books ON");
 
+                        Order order = new Order();
+                        order.Account = await db.Accounts.FirstOrDefaultAsync(a => a.AccID == id);
+                        if (order != null)
+                            return View(order);
                     }
                     
                     
                     return View();
 
                 }
+                
+                
+
+                
                 [HttpPost]
                 public async Task<IActionResult> Order(Order order)
                 {

@@ -14,11 +14,20 @@ namespace WebApplication2.Models
         public DbSet<Order> Orders { get; set; } = null!;
         
         public DbSet<Author> Authors { get; set; } = null!;
+        
+        
+        
+        
 
         //OnModelCreating
+
+
         
-        
-        
+
+
+
+
+
         public ApplicationContext(DbContextOptions<ApplicationContext> options)
             : base(options)
         {
@@ -28,5 +37,6 @@ namespace WebApplication2.Models
             
 
         }
+        
     }
 }
