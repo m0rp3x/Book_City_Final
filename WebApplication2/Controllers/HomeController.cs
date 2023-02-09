@@ -28,33 +28,25 @@ namespace WebApplication2.Controllers
                 Author author1 = new Author { Name = "Александр Пушкин" };
                 Author author2 = new Author { Name = "Лев Толстой" };
                 Author author3 = new Author { Name = "Федор Достоевский" };
-                Author author4 = new Author { Name = "Лоуренс Рис" };
-                Author author5 = new Author { Name = "Джон Рональд Руэл Толкин" };
                 Author author6 = new Author { Name = "Джордж Оруэлл" };
-                Book book1 = new Book { Name = "Евгений Онегин", Year_public = 1833, Author = author1, Tag = "Роман" };
-                Book book2 = new Book { Name = "Война и мир", Year_public = 1869, Author = author2, Tag = "Роман" };
+                Book book1 = new Book { Name = "Евгений Онегин", Year_public = 1833, Author = author1, Tag = "Роман", litres_id =7613069 , image_link = "https://cv6.litres.ru/pub/c/cover_415/7613069.webp"};
+                Book book2 = new Book { Name = "Война и мир", Year_public = 1869, Author = author2, Tag = "Роман", litres_id  = 66691848, image_link = "https://cv4.litres.ru/pub/c/cover_415/66691848.webp"};
                 Book book3 = new Book
-                    { Name = "Руслан и Людмила", Year_public = 1820, Author = author1, Tag = "Роман" };
-                Book book4 = new Book { Name = "Анна Каренина", Year_public = 1877, Author = author2, Tag = "Роман" };
+                    { Name = "Руслан и Людмила", Year_public = 1820, Author = author1, Tag = "Роман", litres_id = 64499757, image_link = "https://cv5.litres.ru/pub/c/cover_415/64499757.webp"};
+                Book book4 = new Book { Name = "Анна Каренина", Year_public = 1877, Author = author2, Tag = "Роман", litres_id = 172100, image_link = "https://cv5.litres.ru/pub/c/cover_415/28057851.webp"};
                 Book book5 = new Book
-                    { Name = "Преступление и наказание", Year_public = 1866, Author = author3, Tag = "Роман" };
-                Book book6 = new Book
-                {
-                    Name = "Освенцим и окончательное решение Еврейского вопроса", Year_public = 1880, Author = author3,
-                    Tag = "Документалистика"
-                };
-                Book book7 = new Book
-                    { Name = "Властелин колец", Year_public = 1890, Author = author5, Tag = "Сказки" };
-                Book book8 = new Book { Name = "Хоббит", Year_public = 1890, Author = author5, Tag = "Сказки" };
-                Book book9 = new Book { Name = "1984", Year_public = 1890, Author = author6, Tag = "Документалистика" };
+                    { Name = "Преступление и наказание", Year_public = 1866, Author = author3, Tag = "Роман", litres_id =54440594, image_link = "https://cv9.litres.ru/pub/c/cover_415/49626890.webp"};
+             
 
-                Order order1 = new Order { };
+                Book book9 = new Book { Name = "1984", Year_public = 1890, Author = author6, Tag = "Документалистика", litres_id = 129098, image_link = "https://cv5.litres.ru/pub/c/cover_415/63576652.webp"};
+
+                
 
 
 
 
-                db.Authors.AddRange(author1,author2,author4,author5,author3);
-                db.Books.AddRange(book1,book2,book3,book4,book5,book6,book7);
+                db.Authors.AddRange(author1,author2,author3);
+                db.Books.AddRange(book1,book2,book3,book4,book5);
                 
                 db.SaveChanges();
             }
@@ -152,6 +144,11 @@ books = sortOrder switch
                 {
                     return View();
                 }
+
+                public IActionResult Support()
+                {
+                    return View();
+                } 
                 public async Task<IActionResult> Order(int? id)
                 {
                     if (id != null)
@@ -160,22 +157,13 @@ books = sortOrder switch
 
                             Order order = new Order();
                             order.Book = await db.Books.FirstOrDefaultAsync(p => p.ID == id);
-                            order.Account = await db.Accounts.FirstOrDefaultAsync(a => a.AccID == id);
                             if (order != null)
                                 return View(order);
                     }
-                    if (id != null)
-                    {
-                        await db.Database.ExecuteSqlRawAsync("SET IDENTITY_INSERT dbo.Books ON");
+                    
+                    
 
-                        Order order = new Order();
-                        order.Account = await db.Accounts.FirstOrDefaultAsync(a => a.AccID == id);
-                        if (order != null)
-                            return View(order);
-                    }
-                    
-                    
-                    return View();
+                return View();
 
                 }
                 
@@ -246,6 +234,17 @@ books = sortOrder switch
                            
                         }
                     }
+                    return NotFound();
+                }
+                public async Task<IActionResult> BookDetail(int? id)
+                {
+                    if (id != null)
+                    {
+                        Book user = await db.Books.FirstOrDefaultAsync(p => p.ID == id);
+                        if (user != null)
+                            return View(user);
+                    }
+                    return NotFound();
                     return NotFound();
                 }
     }

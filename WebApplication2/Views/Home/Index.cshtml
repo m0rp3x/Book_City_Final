@@ -18,7 +18,7 @@
    {
         
       <div class="product-item">
-         <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdrasler.ru%2Fwp-content%2Fuploads%2F2019%2F05%2F%25D0%259A%25D0%25BD%25D0%25B8%25D0%25B3%25D0%25B0-%25D0%25BD%25D0%25B0-%25D1%2581%25D1%2582%25D0%25BE%25D0%25BB%25D0%25B5-%25D1%2584%25D0%25BE%25D1%2582%25D0%25BE-%25D0%25B8-%25D0%25BA%25D0%25B0%25D1%2580%25D1%2582%25D0%25B8%25D0%25BD%25D0%25BA%25D0%25B8-012.jpg&f=1&nofb=1&ipt=57763652d7748ad57a15fc4f608115d4f33f9a4f48fc70cdaf7acdf791879ef8&ipo=images">
+         <img src="@item.image_link">
          <div class="product-list">
             <div class="bg"></div>
             <div class="bg bg2"></div>
@@ -27,7 +27,10 @@
             <span class="price">Автор: @item.Author.Name</span>
             <a asp-action="Delete" asp-controller="Home" asp-route-id="@item.ID" class="button">Купить в один клик</a>
             <br>
+            <br>
             <a asp-action="Order" asp-controller="Home" asp-route-id="@item.ID" class="button">Заказать</a>
+            <a asp-action="BookDetail" asp-controller="Home" asp-route-id="@item.ID" class="button">Подробнее</a>
+
             
          </div>
       </div>
@@ -98,8 +101,3 @@
        background: #fc5a5a;
     }
 </style>
-
-    
-
-    
-   

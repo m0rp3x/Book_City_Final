@@ -1,0 +1,9 @@
+@model Book
+
+<img src="@Model.image_link" class="img-fluid" alt="...">
+
+<H1>Название: @Model.Name</H1>
+<h2>Автор @Model.Author.Name</h2>
+
+
+<div class="litres_fragment_body" style="width: 100%; height: auto;"></div><script type="text/javascript">var litres_fragment_book_view_id = @Model.litres_id;var litres_fragment_lfrom = 1234;var litres_minheight = 500;(function(d, t){var lw = d.createElement(t),s = d.getElementsByTagName(t)[0];lw.async = 1;lw.src = "https://www.litres.ru/static/widgets/js/fragment.js";s.parentNode.insertBefore(lw, s);})(document, "script");</script>

@@ -10,13 +10,13 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using System.Threading.Tasks;
-
+using WebApplication2.Support;
 using WebApplication2.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-string? connection = builder.Configuration.GetConnectionString("WebApplication1Context");
+string? connection = builder.Configuration.GetConnectionString("WebApplication2Context");
 builder.Services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(connection));
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options => //CookieAuthenticationOptions
@@ -24,9 +24,11 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Account/Login");
     });
 builder.Services.AddControllersWithViews();
+builder.Services.AddSignalR();
+
 
 var app = builder.Build();
-
+app.MapHub<ChatHub>("/chat");
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {

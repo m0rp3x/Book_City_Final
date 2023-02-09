@@ -9,69 +9,77 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WebApplication2
 build_property.RootNamespace = WebApplication2
-build_property.ProjectDir = C:\Users\koval\RiderProjects\WebApplication2\WebApplication2\
+build_property.ProjectDir = /Users/m0rp3x/Desktop/c# учеба/файлики/Book_City_Final/WebApplication2/
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\koval\RiderProjects\WebApplication2\WebApplication2
+build_property.MSBuildProjectDirectory = /Users/m0rp3x/Desktop/c# учеба/файлики/Book_City_Final/WebApplication2
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/koval/RiderProjects/WebApplication2/WebApplication2/Views/Home/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDcmVhdGUuY3NodG1s
+[/Users/m0rp3x/Desktop/c\# учеба/файлики/Book_City_Final/WebApplication2/Views/Home/BookDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Cb29rRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koval/RiderProjects/WebApplication2/WebApplication2/Views/Home/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZWxldGUuY3NodG1s
+[/Users/m0rp3x/Desktop/c\# учеба/файлики/Book_City_Final/WebApplication2/Views/Home/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9DcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koval/RiderProjects/WebApplication2/WebApplication2/Views/Home/DeleteOrder.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZWxldGVPcmRlci5jc2h0bWw=
+[/Users/m0rp3x/Desktop/c\# учеба/файлики/Book_City_Final/WebApplication2/Views/Home/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9EZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koval/RiderProjects/WebApplication2/WebApplication2/Views/Home/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXRhaWxzLmNzaHRtbA==
+[/Users/m0rp3x/Desktop/c\# учеба/файлики/Book_City_Final/WebApplication2/Views/Home/DeleteOrder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9EZWxldGVPcmRlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koval/RiderProjects/WebApplication2/WebApplication2/Views/Home/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFZGl0LmNzaHRtbA==
+[/Users/m0rp3x/Desktop/c\# учеба/файлики/Book_City_Final/WebApplication2/Views/Home/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9EZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koval/RiderProjects/WebApplication2/WebApplication2/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[/Users/m0rp3x/Desktop/c\# учеба/файлики/Book_City_Final/WebApplication2/Views/Home/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9FZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koval/RiderProjects/WebApplication2/WebApplication2/Views/Home/Order.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxPcmRlci5jc2h0bWw=
+[/Users/m0rp3x/Desktop/c\# учеба/файлики/Book_City_Final/WebApplication2/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koval/RiderProjects/WebApplication2/WebApplication2/Views/Home/OrderList.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxPcmRlckxpc3QuY3NodG1s
+[/Users/m0rp3x/Desktop/c\# учеба/файлики/Book_City_Final/WebApplication2/Views/Home/Order.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9PcmRlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koval/RiderProjects/WebApplication2/WebApplication2/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[/Users/m0rp3x/Desktop/c\# учеба/файлики/Book_City_Final/WebApplication2/Views/Home/OrderList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9PcmRlckxpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koval/RiderProjects/WebApplication2/WebApplication2/Views/Home/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfVmlld0ltcG9ydHMuY3NodG1s
+[/Users/m0rp3x/Desktop/c\# учеба/файлики/Book_City_Final/WebApplication2/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koval/RiderProjects/WebApplication2/WebApplication2/Views/Shared/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+[/Users/m0rp3x/Desktop/c\# учеба/файлики/Book_City_Final/WebApplication2/Views/Home/Support.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9TdXBwb3J0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koval/RiderProjects/WebApplication2/WebApplication2/Views/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+[/Users/m0rp3x/Desktop/c\# учеба/файлики/Book_City_Final/WebApplication2/Views/Home/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9fVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koval/RiderProjects/WebApplication2/WebApplication2/Views/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[/Users/m0rp3x/Desktop/c\# учеба/файлики/Book_City_Final/WebApplication2/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koval/RiderProjects/WebApplication2/WebApplication2/Views/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+[/Users/m0rp3x/Desktop/c\# учеба/файлики/Book_City_Final/WebApplication2/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koval/RiderProjects/WebApplication2/WebApplication2/Views/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-amt9qciysm
+[/Users/m0rp3x/Desktop/c\# учеба/файлики/Book_City_Final/WebApplication2/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/m0rp3x/Desktop/c\# учеба/файлики/Book_City_Final/WebApplication2/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/m0rp3x/Desktop/c\# учеба/файлики/Book_City_Final/WebApplication2/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-vyp160c36u

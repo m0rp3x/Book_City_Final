@@ -11,8 +11,10 @@ public class Book
     [Key]
     [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
     public int? ID { get; set; }
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-
+    
+    public int litres_id { get; set; }
+    
+    public string image_link { get; set; }
 
     public string Name { get; set; }
    
@@ -59,19 +61,14 @@ public class Order {
     public string AddressReceived { get; set; }
     public string weight { get; set; }
     
-    [ForeignKey("AccID")]
-    public int AccountID { get; set; }
-    public  Account? Account { get; set; }
     
 }
 
-[PrimaryKey("AccID")]
 
 public class Account
 {
-    [ForeignKey("AccountID")]
 
-    public int AccID { get; set; }
+    public int ID { get; set; }
     public string Email { get; set; }
     public string Password { get; set; }
     
