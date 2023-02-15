@@ -1,32 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Source\\Repos\\m0rp3x\\Book_City_Final\\WebApplication2\\WebApplication2.csproj": {}
+    "/Users/m0rp3x/Projects/Book_City_Final/WebApplication2/WebApplication2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Source\\Repos\\m0rp3x\\Book_City_Final\\WebApplication2\\WebApplication2.csproj": {
+    "/Users/m0rp3x/Projects/Book_City_Final/WebApplication2/WebApplication2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Source\\Repos\\m0rp3x\\Book_City_Final\\WebApplication2\\WebApplication2.csproj",
+        "projectUniqueName": "/Users/m0rp3x/Projects/Book_City_Final/WebApplication2/WebApplication2.csproj",
         "projectName": "WebApplication2",
-        "projectPath": "C:\\Users\\User\\Source\\Repos\\m0rp3x\\Book_City_Final\\WebApplication2\\WebApplication2.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Source\\Repos\\m0rp3x\\Book_City_Final\\WebApplication2\\obj\\",
+        "projectPath": "/Users/m0rp3x/Projects/Book_City_Final/WebApplication2/WebApplication2.csproj",
+        "packagesPath": "/Users/m0rp3x/.nuget/packages/",
+        "outputPath": "/Users/m0rp3x/Projects/Book_City_Final/WebApplication2/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/m0rp3x/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -49,6 +42,10 @@
               "target": "Package",
               "version": "[7.0.2, )"
             },
+            "Microsoft.AspNetCore.Routing": {
+              "target": "Package",
+              "version": "[2.2.2, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.2, )"
@@ -70,6 +67,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[7.0.3, )"
+            },
+            "System.Web.Http.Common": {
+              "target": "Package",
+              "version": "[4.0.20126.16343, )"
             }
           },
           "imports": [
@@ -91,7 +92,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
         }
       }
     }

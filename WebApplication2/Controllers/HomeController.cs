@@ -1,14 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using WebApplication2;
 using WebApplication2.Models;
-using System.Linq;
-using Microsoft.EntityFrameworkCore.Storage;
 
 namespace WebApplication2.Controllers
 {
+    
     public class HomeController : Controller
     {
+        
         ApplicationContext db;
         
         
@@ -74,6 +73,11 @@ books = sortOrder switch
                 }
                 public IActionResult Create()
                 {
+                    var Orders = db.Orders.ToList();
+                    ViewBag.data = Orders;
+                    var Books = db.Books.ToList();
+                    ViewBag.jopa = Books;
+
                     return View();
                 }
                 [HttpPost]
@@ -153,6 +157,8 @@ books = sortOrder switch
                 {
                     if (id != null)
                     {
+                        
+                        
                         await db.Database.ExecuteSqlRawAsync("SET IDENTITY_INSERT dbo.Books ON");
 
                             Order order = new Order();
@@ -174,8 +180,8 @@ books = sortOrder switch
                 public async Task<IActionResult> Order(Order order)
                 {
                     //Save AsNoTracking
-
-                    
+                    var Orders = db.Orders.ToList();
+                    ViewBag.data = Orders;
                     db.Database.ExecuteSqlRaw("SET IDENTITY_INSERT dbo.Books ON");
                     db.Set<Book>().AsNoTracking();
                     db.Set<Order>().AsNoTracking();
@@ -217,11 +223,14 @@ books = sortOrder switch
                     }
                     return NotFound();
                 }
-                
-                
+
                 [HttpPost]
                 public async Task<IActionResult> DeleteOrder(int? id)
                 {
+                    var Orders = db.Orders.ToList();
+                    ViewBag.data = Orders.FirstOrDefault(p => p.OrderID == id);
+                    if (id != null)
+                    
                     if (id != null)
                     {
                         Order booksBook = await db.Orders.FirstOrDefaultAsync(p => p.OrderID == id);
@@ -247,5 +256,8 @@ books = sortOrder switch
                     return NotFound();
                     return NotFound();
                 }
+
+               
+                
     }
 }
