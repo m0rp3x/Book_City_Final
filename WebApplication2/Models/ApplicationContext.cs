@@ -21,11 +21,7 @@ namespace WebApplication2.Models
 
         //OnModelCreating
 
-
-        
-
-
-
+     
 
 
         public ApplicationContext(DbContextOptions<ApplicationContext> options)

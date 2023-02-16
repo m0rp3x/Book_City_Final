@@ -1,4 +1,9 @@
-@model WebApplication2.Models.Book
+@using System.Collections
+@using Microsoft.EntityFrameworkCore.Metadata.Internal
+@model Book
+
+ 
+
 <div class="metkaoboix">
 <div class="razmerbook">
     <h2>Добавление Книги</h2>
@@ -33,10 +38,23 @@
         </div>
         <p>
             <input type="submit" class="btn btn-primary mb-3" value="Отправить" />
-            @Html.DropDownList("Book", new SelectList(ViewBag.jopa, "ID", "Name"))
-            
         </p>
     </form>
+    <table class="table">
+            <tr><td>Индефикатор заказа</td><td>Название книги</td><td>Дроп</td>
+            @foreach (var item in ViewBag.jopa)
+        {
+            
+            <tr><td>@item.ID</td>
+                <td>@item.Name</td>
+                <td>
+                    <a asp-action="Delete" asp-controller="Home" asp-route-id="@item.ID">Удалить</a>
+                </td>                
+            </tr>
+        }
+        </table>
+     
+    
 </div>
 <div class="razmerorder">
     <form asp-action="Order" asp-controller="Home">
@@ -70,9 +88,19 @@
             <input type="submit" class="btn btn-primary mb-3" value="Отправить"/>
         </p>
     </form>
-            
-            
-    
+    <table class="table">
+        <tr><td>Индефикатор заказа</td><td>Название книги</td><td>Дроп</td>
+    @foreach (var item in ViewBag.data)
+    {
+        
+        <tr><td>@item.OrderID</td>
+            <td>@item.Book.Name</td>
+            <td>
+                <a asp-action="DeleteOrder" asp-controller="Home" asp-route-id="@item.OrderID">Удалить</a>
+            </td>                
+        </tr>
+    }
+    </table>
 
 </div>
 </div>

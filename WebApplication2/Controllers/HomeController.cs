@@ -15,10 +15,9 @@ namespace WebApplication2.Controllers
         public HomeController(ApplicationContext context)
         {
             db = context;
-            
-            
-            
-            
+
+
+           
           
            
 
