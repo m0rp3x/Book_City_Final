@@ -1,25 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "/Users/m0rp3x/Projects/Book_City_Final/WebApplication2/WebApplication2.csproj": {}
+    "C:\\Users\\Юра\\Source\\Repos\\m0rp3x\\Book_City_Final\\WebApplication2\\WebApplication2.csproj": {}
   },
   "projects": {
-    "/Users/m0rp3x/Projects/Book_City_Final/WebApplication2/WebApplication2.csproj": {
+    "C:\\Users\\Юра\\Source\\Repos\\m0rp3x\\Book_City_Final\\WebApplication2\\WebApplication2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/m0rp3x/Projects/Book_City_Final/WebApplication2/WebApplication2.csproj",
+        "projectUniqueName": "C:\\Users\\Юра\\Source\\Repos\\m0rp3x\\Book_City_Final\\WebApplication2\\WebApplication2.csproj",
         "projectName": "WebApplication2",
-        "projectPath": "/Users/m0rp3x/Projects/Book_City_Final/WebApplication2/WebApplication2.csproj",
-        "packagesPath": "/Users/m0rp3x/.nuget/packages/",
-        "outputPath": "/Users/m0rp3x/Projects/Book_City_Final/WebApplication2/obj/",
+        "projectPath": "C:\\Users\\Юра\\Source\\Repos\\m0rp3x\\Book_City_Final\\WebApplication2\\WebApplication2.csproj",
+        "packagesPath": "C:\\Users\\Юра\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Юра\\Source\\Repos\\m0rp3x\\Book_City_Final\\WebApplication2\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/m0rp3x/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Юра\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -92,7 +99,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }

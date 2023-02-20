@@ -11232,24 +11232,32 @@
     ]
   },
   "packageFolders": {
-    "/Users/m0rp3x/.nuget/packages/": {}
+    "C:\\Users\\Юра\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/m0rp3x/Projects/Book_City_Final/WebApplication2/WebApplication2.csproj",
+      "projectUniqueName": "C:\\Users\\Юра\\Source\\Repos\\m0rp3x\\Book_City_Final\\WebApplication2\\WebApplication2.csproj",
       "projectName": "WebApplication2",
-      "projectPath": "/Users/m0rp3x/Projects/Book_City_Final/WebApplication2/WebApplication2.csproj",
-      "packagesPath": "/Users/m0rp3x/.nuget/packages/",
-      "outputPath": "/Users/m0rp3x/Projects/Book_City_Final/WebApplication2/obj/",
+      "projectPath": "C:\\Users\\Юра\\Source\\Repos\\m0rp3x\\Book_City_Final\\WebApplication2\\WebApplication2.csproj",
+      "packagesPath": "C:\\Users\\Юра\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Юра\\Source\\Repos\\m0rp3x\\Book_City_Final\\WebApplication2\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/Users/m0rp3x/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Юра\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -11322,7 +11330,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   },
@@ -11331,7 +11339,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'System.Web.Http.Common 4.0.20126.16343' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0'. This package may not be fully compatible with your project.",
+      "message": "Пакет \"System.Web.Http.Common 4.0.20126.16343\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\", а не целевой платформы проекта \"net7.0\". Этот пакет может быть не полностью совместим с вашим проектом.",
       "libraryId": "System.Web.Http.Common",
       "targetGraphs": [
         "net7.0"

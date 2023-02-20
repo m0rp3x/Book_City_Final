@@ -1,6 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\WebApplication2",
+    "\\WebApplication2\\Models",
+    "\\WebApplication2\\Views",
+    "\\WebApplication2\\Views\\Home"
   ],
+  "SelectedNode": "\\WebApplication2\\WebApplication2.csproj",
   "PreviewInSolutionExplorer": false
 }

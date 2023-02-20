@@ -1,8 +1,33 @@
 @model Book
+<div class="image_info">
+    <img src="@Model.image_link" width="250" height="250" class="img-thumbnail" alt="...">
+</div>
+<div class="Book_info">
+    <h1 class="fw-bold">Название: @Model.Name</h1>
+<h1>Айди товара:@Model.ID</h1>
+<h1>Жанр произведения: @Model.Tag</h1>
+<h1>Дата публикации: @Model.Year_public</h1>
+<h1>Айди на литрессе: @Model.litres_id</h1>
+</div>
+<div class="book_info_2" width="200" height="200">
+<div class="litres_fragment_body" style="width: 100%; height: auto; position:relative; margin-top:5%;   margin-bottom:25%; margin-left:auto%"></div><script type="text/javascript">var litres_fragment_book_view_id = @Model.litres_id;var litres_fragment_lfrom = 1234;var litres_minheight = 500;(function(d, t){var lw = d.createElement(t),s = d.getElementsByTagName(t)[0];lw.async = 1;lw.src = "https://www.litres.ru/static/widgets/js/fragment.js";s.parentNode.insertBefore(lw, s);})(document, "script");</script>
+</div>
+<style>
+.Book_info{
+    position: absolute;
+    left: 25%;
+    top: 12%;
+}
+.image_info{
+    position: relative;
+    margin-bottom: 2%;
+    right: 5%;
+}
 
-<img src="@Model.image_link" class="img-fluid" alt="...">
+    .book_info_2{
+       
+        
+    }
 
-<H1>Название: @Model.Name</H1>
 
-
-<div class="litres_fragment_body" style="width: 100%; height: auto;"></div><script type="text/javascript">var litres_fragment_book_view_id = @Model.litres_id;var litres_fragment_lfrom = 1234;var litres_minheight = 500;(function(d, t){var lw = d.createElement(t),s = d.getElementsByTagName(t)[0];lw.async = 1;lw.src = "https://www.litres.ru/static/widgets/js/fragment.js";s.parentNode.insertBefore(lw, s);})(document, "script");</script>
+</style>
