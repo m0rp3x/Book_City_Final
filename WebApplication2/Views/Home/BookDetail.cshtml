@@ -1,33 +1,74 @@
 @model Book
-<div class="image_info">
-    <img src="@Model.image_link" width="250" height="250" class="img-thumbnail" alt="...">
-</div>
-<div class="Book_info">
-    <h1 class="fw-bold">Название: @Model.Name</h1>
-<h1>Айди товара:@Model.ID</h1>
-<h1>Жанр произведения: @Model.Tag</h1>
-<h1>Дата публикации: @Model.Year_public</h1>
-<h1>Айди на литрессе: @Model.litres_id</h1>
-</div>
-<div class="book_info_2" width="200" height="200">
-<div class="litres_fragment_body" style="width: 100%; height: auto; position:relative; margin-top:5%;   margin-bottom:25%; margin-left:auto%"></div><script type="text/javascript">var litres_fragment_book_view_id = @Model.litres_id;var litres_fragment_lfrom = 1234;var litres_minheight = 500;(function(d, t){var lw = d.createElement(t),s = d.getElementsByTagName(t)[0];lw.async = 1;lw.src = "https://www.litres.ru/static/widgets/js/fragment.js";s.parentNode.insertBefore(lw, s);})(document, "script");</script>
-</div>
-<style>
-.Book_info{
-    position: absolute;
-    left: 25%;
-    top: 12%;
-}
-.image_info{
-    position: relative;
-    margin-bottom: 2%;
-    right: 5%;
-}
-
-    .book_info_2{
-       
-        
-    }
 
 
-</style>
+  <main class="container my-4">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="@Model.image_link" class="img-fluid mb-3" alt="Book Cover">
+      </div>
+      <div class="col-md-6">
+        <h1 class="mb-3">@Model.Name</h1>
+        <h2 class="mb-3"> @Model.Author.Name.ToString()</h2>
+        <p class="lead mb-3">@Model.Description_facts</p>
+        <p class="mb-3">Артикль: @Model.ID</p>
+        <p class="mb-3">Жанр: @Model.Tag</p>
+        <p class="mb-3">Дата публикации: @Model.Year_public</p>
+        <p class="mb-3">API Литресс: @Model.litres_id</p>
+        <button class="btn btn-dark mb-3">Купить сейчас</button>
+        <div class="mb-3">
+          <h4>Описание</h4>
+          <p>@Model.Description</p>
+        </div>
+      </div>
+    </div>
+
+   
+
+    <div class="mb-4">
+      <h2>Book Details</h2>
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <td><strong>Язык</strong></td>
+            <td>Русский</td>
+          </tr>
+          <tr>
+            <td><strong>Dimensions</strong></td>
+            <td>6 x 9 in</td>
+          </tr>
+          <tr>
+            <td><strong>Weight</strong></td>
+            <td>1 lb</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mb-4">
+      <h2>Reviews</h2>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Great book!</h5>
+          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Posted 3 days ago</small>
+        </div>
+      </div>
+      <div class="card mt-3">
+        <div class="card-body">
+          <h5 class="card-title">A must-read</h5>
+          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Posted 1 week ago</small>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+
+
+
+

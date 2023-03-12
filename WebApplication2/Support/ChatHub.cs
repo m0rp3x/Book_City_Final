@@ -9,7 +9,7 @@ public class ChatHub : Hub
     public async Task Send(string message, string username)
     {
         db = Context;
-        await this.Clients.All.SendAsync("Receive", message, username = db.User.Identity.Name);
+        await this.Clients.All.SendAsync("Receive", message, username = db.User?.Identity.Name);
     }
     
 }

@@ -1,0 +1,14 @@
+﻿
+@foreach (var item in ViewBag.data_govno)
+{
+    <!--Section: News of the day-->
+    <div class="row gx-5">
+        <div class="col-md-6 mb-4">
+            <h4><strong>@item.Title</strong></h4>
+            <p class="text-muted">
+                @item.description
+            </p>
+            <p>@item.date</p>
+        </div>
+    </div>
+}

@@ -15,6 +15,7 @@
           "Microsoft.EntityFrameworkCore.Sqlite": "7.0.2",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.2",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "7.0.3",
+          "System.ServiceModel.Syndication": "8.0.0-preview.1.23110.8",
           "System.Web.Http.Common": "4.0.20126.16343"
         },
         "runtime": {
@@ -2404,6 +2405,14 @@
         }
       },
       "System.Security.Principal.Windows/5.0.0": {},
+      "System.ServiceModel.Syndication/8.0.0-preview.1.23110.8": {
+        "runtime": {
+          "lib/net7.0/System.ServiceModel.Syndication.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.11008"
+          }
+        }
+      },
       "System.Text.Encoding/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.1",
@@ -3800,6 +3809,13 @@
       "sha512": "sha512-t0MGLukB5WAVU9bO3MGzvlGnyJPgUlcwerXn1kzBRjwLKixT96XV0Uza41W49gVd8zEMFu9vQEFlv0IOrytICA==",
       "path": "system.security.principal.windows/5.0.0",
       "hashPath": "system.security.principal.windows.5.0.0.nupkg.sha512"
+    },
+    "System.ServiceModel.Syndication/8.0.0-preview.1.23110.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bCJyBtgxQipWIQTV+rSCmO9FmJe39Jarx4ifY1uYbEbuZ9fRajcTjQMcAb3S0Rcf7clQCXhdS71o0s4iNEXX2A==",
+      "path": "system.servicemodel.syndication/8.0.0-preview.1.23110.8",
+      "hashPath": "system.servicemodel.syndication.8.0.0-preview.1.23110.8.nupkg.sha512"
     },
     "System.Text.Encoding/4.3.0": {
       "type": "package",

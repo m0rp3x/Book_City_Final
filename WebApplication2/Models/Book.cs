@@ -21,7 +21,9 @@ public class Book
 
     public int Year_public { get; set; }
     
-
+    public string Description { get; set; }
+    
+    public string Description_facts { get; set; }
     
     public int AuthorID { get; set; }
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

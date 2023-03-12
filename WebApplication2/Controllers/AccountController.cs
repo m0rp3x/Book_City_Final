@@ -6,7 +6,7 @@ using System.Security.Claims;
 using WebApplication2.Models; 
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
- 
+
 namespace WebApplication2.Controllers
 {
     public class AccountController : Controller
