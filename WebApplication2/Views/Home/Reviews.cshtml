@@ -1,0 +1,16 @@
+﻿@model Reviews?
+<form asp-action="Reviews" asp-controller="Home">
+    <div class="mb-3">
+        <input type="hidden" asp-for="BookID" value="@Model.Book.ID" />
+        <label for="exampleFormControlInput1" asp-for="Name_rew" class="form-label">Email address</label>
+        <input type="text" class="form-control" asp-for="Name_rew" value="@User.Identity.Name" id="exampleFormControlInput1" placeholder="@User.Identity.Name">
+    </div>
+<div class="mb-3">
+    <label for="exampleFormControlTextarea1" asp-for="rew" class="form-label">Example textarea</label>
+    <textarea class="form-control" asp-for="rew" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <p>
+        <input type="submit" class="btn btn-primary mb-3" value="Отправить"/>
+    </p>
+    
+</div>
+</form>

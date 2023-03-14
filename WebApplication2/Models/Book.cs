@@ -9,6 +9,7 @@ public class Book
     
     [ForeignKey("OrderID")]
     [Key]
+    
     [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
     public int? ID { get; set; }
     
@@ -37,7 +38,8 @@ public class Book
 
 
     public Order  Order { get;set; }
-
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public Reviews Reviews { get; set; }
 
 }
 
@@ -74,8 +76,19 @@ public class Account
     public string Email { get; set; }
     public string Password { get; set; }
     
+}
+[PrimaryKey("RewID")]
+public class Reviews
+{
+    public int RewID { get; set; }
+    public string Name_rew { get; set; }
+    public string rew { get; set; }
+    [ForeignKey("ID")]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public int BookID { get; set; }
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 
-
+    public virtual Book Book { get; set; }
 }
 
 public enum SortState
