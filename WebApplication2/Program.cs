@@ -16,7 +16,7 @@ using WebApplication2.Models;
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-string? connection = builder.Configuration.GetConnectionString("WebApplication2Context");
+string? connection = builder.Configuration.GetConnectionString("WebApplication1Context");
 builder.Services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(connection));
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options => //CookieAuthenticationOptions

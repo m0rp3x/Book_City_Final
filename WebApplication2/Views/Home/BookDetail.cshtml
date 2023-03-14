@@ -49,9 +49,10 @@
   <div class="mb-4">
     <h2>Отзывы</h2>
     <a class="nav-link text-dark" asp-area="" asp-controller="Home" type="buttom" asp-action="Reviews">Бета</a>
-    if (Model.Reviews.Count > 0)
-    {
-      @foreach (var item in ViewBag.jopochka)
+ 
+
+    
+      @foreach (var item in Model.Reviews)
       {
         
         <div class="card">
@@ -64,11 +65,6 @@
           </div>
         </div>
       }
-    }
-    else
-    {
-      <p>пустота</p>
-    }
   </div>
 
   </main>

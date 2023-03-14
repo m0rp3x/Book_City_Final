@@ -15,6 +15,10 @@ namespace WebApplication2.Controllers
         public HomeController(ApplicationContext context)
         {
             db = context;
+            
+            var Reviews = db.Reviews.ToList();
+
+            ViewBag.jopochka = Reviews;
 
 
             if (!db.Authors.Any())
@@ -23,7 +27,7 @@ namespace WebApplication2.Controllers
                 Author author2 = new Author { Name = "Лев Толстой" };
                 Author author3 = new Author { Name = "Федор Достоевский" };
                 Author author6 = new Author { Name = "Джордж Оруэлл" };
-                Reviews reviews1 = new Reviews { Name_rew = "4040", rew = "123", BookID = 1};
+                Reviews reviews1 = new Reviews { Name_rew = "4040", rew = "123", BookID = 1 };
                 Book book1 = new Book
                 {
                     Name = "Евгений Онегин", Year_public = 1833, Author = author1, Tag = "Роман", litres_id = 7613069,
@@ -80,7 +84,7 @@ namespace WebApplication2.Controllers
                     Description_facts =
                         "Власть – не средство; она – цель. Диктатуру учреждают не для того, чтобы охранять революцию; революцию совершают для того, чтобы установить диктатуру. Цель репрессий – репрессии. Цель пытки – пытка. Цель власти – власть."
                 };
-                
+
 
 
                 db.Authors.AddRange(author1, author2, author3, author6);
@@ -285,9 +289,10 @@ namespace WebApplication2.Controllers
 
         public async Task<IActionResult> BookDetail(int? id)
         {
+            
             if (id != null)
             {
-                Book user = await db.Books.Include(x => x.Author).FirstOrDefaultAsync(p => p.ID == id);
+                Book user = await db.Books.Include(x => x.Author).Include(x => x.Reviews).FirstOrDefaultAsync(p => p.ID == id);
                 if (user != null)
                     return View(user);
             }
@@ -325,35 +330,40 @@ namespace WebApplication2.Controllers
             public string description { get; set; }
             public string date { get; set; }
         }
-        
+
         public async Task<IActionResult> Reviews(int? id)
         {
             if (id != null)
             {
+                await db.Database.ExecuteSqlRawAsync("SET IDENTITY_INSERT dbo.Books ON");
+
+                Reviews reviews = new Reviews();
+                reviews.Book = await db.Books.FirstOrDefaultAsync(p => p.ID == id);
+                if (reviews != null)
+                {
+                    return View(reviews);
+                }
+            }
+
+            return NotFound();
+        }
+
+        [HttpPost]
+          public  async Task<IActionResult> Reviews(Reviews reviews)
+            {
+                db.Database.ExecuteSqlRaw("SET IDENTITY_INSERT dbo.Books ON");
                 
-                var book = db.Books.Include(b => b.Reviews).FirstOrDefault(b => b.ID == id);
-                return View(book.Reviews);
+                db.Set<Book>().AsNoTracking();
+                db.Entry(reviews).State = EntityState.Modified;
+
+                await db.AddAsync(reviews);
+                await db.SaveChangesAsync();
+                
+
+                return await Task.FromResult<IActionResult>(RedirectToAction("Index"));
             }
 
 
-            return View();
         }
-        [HttpPost]
-        public async Task<IActionResult> Reviews(Reviews reviews)
-        {
-            //Save AsNoTracking
-            var Reviews = db.Reviews.ToList();
-
-            ViewBag.jopochka = Reviews;
-            db.Set<Reviews>().AsNoTracking();
-            await db.AddAsync(reviews);
-            await db.SaveChangesAsync();
-
-
-            return await Task.FromResult<IActionResult>(RedirectToAction("BookDetail"));
-        }
-        
-        
         
     }
-}

@@ -10,24 +10,22 @@ namespace WebApplication2.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public DbSet<Book> Books { get; set; } = null!;
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+
 
         public DbSet<Account> Accounts { get; set; } = null!;
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+
         public DbSet<Order> Orders { get; set; } = null!;
-        
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+
         public DbSet<Author> Authors { get; set; } = null!;
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public DbSet<Reviews> Reviews { get; set; } = null!;
+
  
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Book>()
-                .HasOne(b => b.Reviews)
-                .WithOne(r => r.Book)
-                .HasForeignKey<Reviews>(r => r.BookID);
-        }
-
-
+        
 
         //OnModelCreating
 

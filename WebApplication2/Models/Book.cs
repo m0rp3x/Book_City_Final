@@ -39,7 +39,9 @@ public class Book
 
     public Order  Order { get;set; }
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public Reviews Reviews { get; set; }
+    public List<Reviews> Reviews { get; set; }
+
+
 
 }
 
@@ -77,9 +79,12 @@ public class Account
     public string Password { get; set; }
     
 }
+
 [PrimaryKey("RewID")]
 public class Reviews
 {
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+
     public int RewID { get; set; }
     public string Name_rew { get; set; }
     public string rew { get; set; }
