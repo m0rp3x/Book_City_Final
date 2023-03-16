@@ -41,7 +41,7 @@ public class Book
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public List<Reviews> Reviews { get; set; }
 
-    public double Rating => Reviews?.Count > 0 ? Reviews.Average(r => r.Stars) : 0;
+    public double Rating => Reviews?.Count > 0 ? Math.Round(Reviews.Average(r => r.Stars),1) : 0;
         
         
     }

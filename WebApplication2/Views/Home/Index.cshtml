@@ -1,48 +1,42 @@
 ﻿@model IEnumerable<WebApplication2.Models.Book>
- 
+
 <h2>Список книг</h2>
 
-            <a class="btn btn-primary" asp-action="Index" asp-route-sortOrder="@ViewBag.NameSort">По Названию</a>
-            <a class="btn btn-primary" asp-action="Index" asp-route-sortOrder="@ViewBag.AgeSort">По дате Публикации</a>
-            <a  class="btn btn-primary"  asp-action="Index" asp-route-sortOrder="@ViewBag.AuthorSort">По Автору</a>
-            <a class="btn btn-primary" asp-action="Index" asp-route-sortOrder="@ViewBag.TagSort">По жанру</a>
-
-
-            
-   
-
+<a class="btn btn-primary" asp-action="Index" asp-route-sortOrder="@ViewBag.NameSort">По Названию</a>
+<a class="btn btn-primary" asp-action="Index" asp-route-sortOrder="@ViewBag.AgeSort">По дате Публикации</a>
+<a class="btn btn-primary" asp-action="Index" asp-route-sortOrder="@ViewBag.AuthorSort">По Автору</a>
+<a class="btn btn-primary" asp-action="Index" asp-route-sortOrder="@ViewBag.TagSort">По жанру</a>
 
 
 <div class="jopa_card">
-   @foreach (var item in Model)
-   {
-        
-      <div class="product-item">
-         <img src="@item.image_link">
-         <div class="product-list">
-            <div class="bg"></div>
-            <div class="bg bg2"></div>
-            <div class="bg bg3"></div>
-            <h3>Название: @item.Name</h3>
-            <span class="price">Автор: @item.Author.Name</span>
+    @foreach (var item in Model)
+    {
+        <div class="product-item">
+            <img src="@item.image_link">
+            <div class="product-list">
+                <div class="bg"></div>
+                <div class="bg bg2"></div>
+                <div class="bg bg3"></div>
+                <h3>Название: @item.Name</h3>
+                <span class="price">Автор: @item.Author.Name</span>
+                <a asp-action="Delete" asp-controller="Home" asp-route-id="@item.ID" class="button">Купить в один клик</a>
+                <br>
+                <br>
+                <a asp-action="Order" asp-controller="Home" asp-route-id="@item.ID" class="button">Заказать</a>
+                <a asp-action="BookDetail" asp-controller="Home" asp-route-id="@item.ID" class="button">Подробнее</a>
+                <BR/>
+                <BR/>
+                <div class="mb-5">
+                    <a asp-action="Reviews" asp-controller="Home" asp-route-id="@item.ID" class="button">Оставить отзыв</a>
 
-            <a asp-action="Delete" asp-controller="Home" asp-route-id="@item.ID" class="button">Купить в один клик</a>
-            <br>
-            <br>
-            <a asp-action="Order" asp-controller="Home" asp-route-id="@item.ID" class="button">Заказать</a>
-            <a asp-action="BookDetail" asp-controller="Home" asp-route-id="@item.ID" class="button">Подробнее</a>
-            <div class="mb-5">
-            <a asp-action="Reviews" asp-controller="Home" asp-route-id="@item.ID" class="button">Оставить отзыв</a>
+
+                </div>
+
             </div>
-            
-         </div>
-      </div>
-      <br><br/>
-        
-   }
+        </div>
+        <br><br/>
+    }
 </div>
-
-
 
 
 <style>
