@@ -41,9 +41,13 @@ public class Book
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public List<Reviews> Reviews { get; set; }
 
+    public double Rating => Reviews?.Count > 0 ? Reviews.Average(r => r.Stars) : 0;
+        
+        
+    }
 
 
-}
+
 
 
 [PrimaryKey("AuthorID")]
@@ -94,6 +98,7 @@ public class Reviews
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 
     public virtual Book Book { get; set; }
+    public int Stars { get; set; }
 }
 
 public enum SortState

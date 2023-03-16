@@ -25,13 +25,15 @@
             <div class="bg bg3"></div>
             <h3>Название: @item.Name</h3>
             <span class="price">Автор: @item.Author.Name</span>
+
             <a asp-action="Delete" asp-controller="Home" asp-route-id="@item.ID" class="button">Купить в один клик</a>
             <br>
             <br>
             <a asp-action="Order" asp-controller="Home" asp-route-id="@item.ID" class="button">Заказать</a>
             <a asp-action="BookDetail" asp-controller="Home" asp-route-id="@item.ID" class="button">Подробнее</a>
-            <a asp-action="Reviews" asp-controller="Home" asp-route-id="@item.ID">Детали Заказа</a> 
-            
+            <div class="mb-5">
+            <a asp-action="Reviews" asp-controller="Home" asp-route-id="@item.ID" class="button">Оставить отзыв</a>
+            </div>
             
          </div>
       </div>

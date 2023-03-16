@@ -115,6 +115,8 @@ namespace WebApplication2.Controllers
             };
             return View(await books.AsNoTracking().ToListAsync());
         }
+        [HttpPost]
+        
 
         public IActionResult Create()
         {
@@ -289,16 +291,31 @@ namespace WebApplication2.Controllers
 
         public async Task<IActionResult> BookDetail(int? id)
         {
-            
             if (id != null)
             {
-                Book user = await db.Books.Include(x => x.Author).Include(x => x.Reviews).FirstOrDefaultAsync(p => p.ID == id);
+                Book user = db.Books.Include(b => b.Author)
+                    .Include(b => b.Reviews)
+                    .FirstOrDefault(m => m.ID == id);
+
                 if (user != null)
+                {
+                    // Вычисляем средний рейтинг книги
+                    double ratingSum = 0;
+                    foreach (var review in user.Reviews)
+                    {
+                        ratingSum += review.Book.Rating;
+                    }
+                    double ratingAverage = user.Reviews.Count > 0 ? ratingSum / user.Reviews.Count : 0;
+
+                    ViewData["RatingAverage"] = ratingAverage;
+
                     return View(user);
+                }
             }
 
             return NotFound();
         }
+
 
 
         public ActionResult rss()

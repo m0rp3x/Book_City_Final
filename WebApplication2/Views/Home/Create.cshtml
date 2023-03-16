@@ -2,107 +2,106 @@
 @using Microsoft.EntityFrameworkCore.Metadata.Internal
 @model Book
 
- 
 
 <div class="metkaoboix">
-<div class="razmerbook">
-    <h2>Добавление Книги</h2>
-    <form asp-action="create" asp-controller="Home">
-        <div class="mb-3 row">
-            <label asp-for="Name" class="form-label">Название</label>
-            <input type="text" class="form-control" asp-for="Name">
-        </div>
-        <div class="mb-3 row">
-            <label asp-for="Year_public" class="form-label">Год Публикации</label>
-            <input type="text" class="form-control" asp-for="Year_public">
-        </div>
-    
-        <div class="mb-3 row">
-            <label asp-for="Author" class="form-label">Автор</label>
-            <input type="text" class="form-control" asp-for="Author.Name">
-        </div>
-    
-        <div class="mb-3 row">
-            <label asp-for="Tag" class="form-label">Жанр</label>
-            <input type="text" class="form-control" asp-for="Tag">
-        </div>
-    
-        <div class="mb-3 row">
-            <label asp-for="image_link" class="form-label">Обложка</label>
-            <input type="text" class="form-control" asp-for="image_link">
-        </div>
-    
-        <div class="mb-3 row">
-            <label asp-for="litres_id" class="form-label">Айди Литресса</label>
-            <input type="text" class="form-control" asp-for="litres_id">
-        </div>
-        <p>
-            <input type="submit" class="btn btn-primary mb-3" value="Отправить" />
-        </p>
-    </form>
-    <table class="table">
+    <div class="razmerbook">
+        <h2>Добавление Книги</h2>
+        <form asp-action="create" asp-controller="Home">
+            <div class="mb-3 row">
+                <label asp-for="Name" class="form-label">Название</label>
+                <input type="text" class="form-control" asp-for="Name">
+            </div>
+            <div class="mb-3 row">
+                <label asp-for="Year_public" class="form-label">Год Публикации</label>
+                <input type="text" class="form-control" asp-for="Year_public">
+            </div>
+
+            <div class="mb-3 row">
+                <label asp-for="Author" class="form-label">Автор</label>
+                <input type="text" class="form-control" asp-for="Author.Name">
+            </div>
+
+            <div class="mb-3 row">
+                <label asp-for="Tag" class="form-label">Жанр</label>
+                <input type="text" class="form-control" asp-for="Tag">
+            </div>
+
+            <div class="mb-3 row">
+                <label asp-for="image_link" class="form-label">Обложка</label>
+                <input type="text" class="form-control" asp-for="image_link">
+            </div>
+
+            <div class="mb-3 row">
+                <label asp-for="litres_id" class="form-label">Айди Литресса</label>
+                <input type="text" class="form-control" asp-for="litres_id">
+            </div>
+            <p>
+                <input type="submit" class="btn btn-primary mb-3" value="Отправить"/>
+            </p>
+        </form>
+        <table class="table">
             <tr><td>Индефикатор заказа</td><td>Название книги</td><td>Дроп</td>
             @foreach (var item in ViewBag.jopa)
-        {
-            
-            <tr><td>@item.ID</td>
-                <td>@item.Name</td>
-                <td>
-                    <a asp-action="Delete" asp-controller="Home" asp-route-id="@item.ID">Удалить</a>
-                </td>                
-            </tr>
-        }
+            {
+                <tr>
+                    <td>@item.ID</td>
+                    <td>@item.Name</td>
+                    <td>
+                        <a asp-action="Delete" asp-controller="Home" asp-route-id="@item.ID">Удалить</a>
+                    </td>
+                </tr>
+            }
         </table>
-     
-    
-</div>
-<div class="razmerorder">
-    <form asp-action="Order" asp-controller="Home">
-        <h2>Добавление Заказа</h2>
-        <div class="mb-3 row">
-            <label asp-for="@Model.Order.Book.ID" class="form-label">Артикль</label>
-            <input type="text" class="form-control" asp-for="@Model.Order.Book.ID">
-        </div>
-        <div class="mb-3 row">
-            <label asp-for="@Model.Order.CitySent" class="form-label">Город отправки</label>
-            <input type="text" class="form-control" asp-for="@Model.Order.CitySent">
-        </div>
-        <div class="mb-3 row">
-            <label asp-for="@Model.Order.AddressSent" class="form-label">Адресс Магазина</label>
-            <input type="text" class="form-control" asp-for="@Model.Order.AddressSent">
-        </div>
 
-        <div class="mb-3 row">
-            <label asp-for="@Model.Order.CityReceived" class="form-label">Город получения</label>
-            <input type="text" class="form-control" asp-for="@Model.Order.CityReceived">
-        </div>
-        <div class="mb-3 row">
-            <label asp-for="@Model.Order.AddressReceived" class="form-label">Адресс Получения</label>
-            <input type="text" class="form-control" asp-for="@Model.Order.AddressReceived">
-        </div>
-        <div class="mb-3 row">
-            <label asp-for="@Model.Order.weight" class="form-label">Вес Товары</label>
-            <input type="text" class="form-control" asp-for="@Model.Order.weight">
-        </div>
-        <p>
-            <input type="submit" class="btn btn-primary mb-3" value="Отправить"/>
-        </p>
-    </form>
-    <table class="table">
-        <tr><td>Индефикатор заказа</td><td>Название книги</td><td>Дроп</td>
-    @foreach (var item in ViewBag.data)
-    {
-        
-        <tr><td>@item.OrderID</td>
-            <td>@item.Book.Name</td>
-            <td>
-                <a asp-action="DeleteOrder" asp-controller="Home" asp-route-id="@item.OrderID">Удалить</a>
-            </td>                
-        </tr>
-    }
-    </table>
 
-</div>
+    </div>
+    <div class="razmerorder">
+        <form asp-action="Order" asp-controller="Home">
+            <h2>Добавление Заказа</h2>
+            <div class="mb-3 row">
+                <label asp-for="@Model.Order.Book.ID" class="form-label">Артикль</label>
+                <input type="text" class="form-control" asp-for="@Model.Order.Book.ID">
+            </div>
+            <div class="mb-3 row">
+                <label asp-for="@Model.Order.CitySent" class="form-label">Город отправки</label>
+                <input type="text" class="form-control" asp-for="@Model.Order.CitySent">
+            </div>
+            <div class="mb-3 row">
+                <label asp-for="@Model.Order.AddressSent" class="form-label">Адресс Магазина</label>
+                <input type="text" class="form-control" asp-for="@Model.Order.AddressSent">
+            </div>
+
+            <div class="mb-3 row">
+                <label asp-for="@Model.Order.CityReceived" class="form-label">Город получения</label>
+                <input type="text" class="form-control" asp-for="@Model.Order.CityReceived">
+            </div>
+            <div class="mb-3 row">
+                <label asp-for="@Model.Order.AddressReceived" class="form-label">Адресс Получения</label>
+                <input type="text" class="form-control" asp-for="@Model.Order.AddressReceived">
+            </div>
+            <div class="mb-3 row">
+                <label asp-for="@Model.Order.weight" class="form-label">Вес Товары</label>
+                <input type="text" class="form-control" asp-for="@Model.Order.weight">
+            </div>
+            <p>
+                <input type="submit" class="btn btn-primary mb-3" value="Отправить"/>
+            </p>
+        </form>
+        <table class="table">
+            <tr><td>Индефикатор заказа</td><td>Название книги</td><td>Дроп</td>
+            @foreach (var item in ViewBag.data)
+            {
+                <tr>
+                    <td>@item.OrderID</td>
+                    <td>@item.Book.Name</td>
+                    <td>
+                        <a asp-action="DeleteOrder" asp-controller="Home" asp-route-id="@item.OrderID">Удалить</a>
+                    </td>
+                </tr>
+            }
+        </table>
+
+    </div>
 </div>
 <style>
     .razmerbook{
