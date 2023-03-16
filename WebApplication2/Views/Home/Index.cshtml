@@ -12,8 +12,10 @@
     @foreach (var item in Model)
     {
         <div class="product-item">
-            <img src="@item.image_link">
-            <div class="product-list">
+           <div class="aspect-ratio aspect-ratio-4x3">
+              <img src="@item.image_link" class="card-img-top img-fluid" alt="Product Image">
+           </div>
+           <div class="product-list">
                 <div class="bg"></div>
                 <div class="bg bg2"></div>
                 <div class="bg bg3"></div>
@@ -97,4 +99,19 @@
     .product-item:hover .button {
        background: #fc5a5a;
     }
+    .product-item img {
+      object-fit: cover; 
+      object-position: center center; 
+      width: 100%; 
+      height: 300px; 
+    }
+    .product-item h3 {
+      font-size: 16px; /* добавить так чтобы всё вмещалось */
+      white-space: nowrap; 
+      overflow: hidden; 
+      text-overflow: ellipsis; 
+      max-width: 100%; 
+    }
+
+
 </style>
