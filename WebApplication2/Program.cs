@@ -27,6 +27,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddSignalR();
 
 
+
 var app = builder.Build();
 app.MapHub<ChatHub>("/chat");
 // Configure the HTTP request pipeline.
@@ -54,7 +55,6 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
 
 
 app.MapControllerRoute(

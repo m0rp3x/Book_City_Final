@@ -4,6 +4,7 @@ using WebApplication2.Models;
 using System.Linq;
 using System.ServiceModel.Syndication;
 using System.Xml;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebApplication2.Controllers
 {
@@ -115,9 +116,8 @@ namespace WebApplication2.Controllers
             };
             return View(await books.AsNoTracking().ToListAsync());
         }
-        [HttpPost]
         
-
+        [Authorize(Roles = "admin")]
         public IActionResult Create()
         {
             var Orders = db.Orders.ToList();
@@ -127,7 +127,7 @@ namespace WebApplication2.Controllers
 
             return View();
         }
-
+        [Authorize(Roles = "admin")]
         [HttpPost]
         public Task<IActionResult> Create(Book book)
         {

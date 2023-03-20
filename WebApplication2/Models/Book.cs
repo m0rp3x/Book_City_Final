@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
+
 namespace WebApplication2.Models;
 [PrimaryKey("ID")]
 public class Book
@@ -77,11 +79,22 @@ public class Order {
 
 public class Account
 {
-
-    public int ID { get; set; }
+    public int Id { get; set; }
     public string Email { get; set; }
     public string Password { get; set; }
-    
+ 
+    public int? RoleId { get; set; }
+    public Role? Role { get; set; }
+}
+public class Role
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public List<Account> Accounts { get; set; }
+    public Role()
+    {
+        Accounts = new List<Account>();
+    }
 }
 
 [PrimaryKey("RewID")]
@@ -112,4 +125,3 @@ public enum SortState
     TagAsc,
     TagDesc
 }
-

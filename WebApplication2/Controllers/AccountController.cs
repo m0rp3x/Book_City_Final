@@ -63,13 +63,13 @@ namespace WebApplication2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(string Email, string Password)
         {
-            if (ModelState.IsValid)
             {
                 Account? user = await db.Accounts.FirstOrDefaultAsync(u => u.Email == Email);
                 if (user == null)
                 {
-                    // добавляем пользователя в бд
-                    db.Accounts.Add(new Account { Email = Email, Password = Password, });
+                   
+                    Account UE =  new Account { Email = Email, Password = Password, Role = await db.Roles.FirstOrDefaultAsync(r => r.Name == "user")};
+                    db.Accounts.Add(UE);
                     await db.SaveChangesAsync();
  
                     await Authenticate(Email); // аутентификация
@@ -84,10 +84,13 @@ namespace WebApplication2.Controllers
  
         private async Task Authenticate(string userName)
         {
+            
             // создаем один claim
             var claims = new List<Claim>
             {
                 new Claim(ClaimsIdentity.DefaultNameClaimType, userName)
+
+                
             };
             // создаем объект ClaimsIdentity
             ClaimsIdentity id = new ClaimsIdentity(claims, "ApplicationCookie", ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);

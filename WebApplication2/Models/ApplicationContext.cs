@@ -22,6 +22,8 @@ namespace WebApplication2.Models
         public DbSet<Author> Authors { get; set; } = null!;
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public DbSet<Reviews> Reviews { get; set; } = null!;
+        public DbSet<Role?> Roles { get; set; } = null!;
+
 
  
 
