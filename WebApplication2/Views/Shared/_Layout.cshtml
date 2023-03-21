@@ -37,7 +37,7 @@
                     <li class="nav-item">
                         <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">О нас</a>
                     </li>
-                    @if (!User.IsInRole("admin"))
+                    @if (!User.IsInRole("user"))
                     {
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Create">Админка</a>

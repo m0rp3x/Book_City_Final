@@ -5,6 +5,7 @@ using System.Linq;
 using System.ServiceModel.Syndication;
 using System.Xml;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace WebApplication2.Controllers
 {
@@ -16,7 +17,7 @@ namespace WebApplication2.Controllers
         public HomeController(ApplicationContext context)
         {
             db = context;
-            
+
             var Reviews = db.Reviews.ToList();
 
             ViewBag.jopochka = Reviews;
@@ -116,7 +117,7 @@ namespace WebApplication2.Controllers
             };
             return View(await books.AsNoTracking().ToListAsync());
         }
-        
+
         [Authorize(Roles = "admin")]
         public IActionResult Create()
         {
@@ -127,8 +128,9 @@ namespace WebApplication2.Controllers
 
             return View();
         }
-        [Authorize(Roles = "admin")]
+
         [HttpPost]
+        [Authorize(Roles = "admin")]
         public Task<IActionResult> Create(Book book)
         {
             db.AddRange(book);
@@ -305,6 +307,7 @@ namespace WebApplication2.Controllers
                     {
                         ratingSum += review.Book.Rating;
                     }
+
                     double ratingAverage = user.Reviews.Count > 0 ? ratingSum / user.Reviews.Count : 0;
 
                     ViewData["RatingAverage"] = ratingAverage;
@@ -366,21 +369,21 @@ namespace WebApplication2.Controllers
         }
 
         [HttpPost]
-          public  async Task<IActionResult> Reviews(Reviews reviews)
-            {
-                db.Database.ExecuteSqlRaw("SET IDENTITY_INSERT dbo.Books ON");
-                
-                db.Set<Book>().AsNoTracking();
-                db.Entry(reviews).State = EntityState.Modified;
+        public async Task<IActionResult> Reviews(Reviews reviews)
+        {
+            db.Database.ExecuteSqlRaw("SET IDENTITY_INSERT dbo.Books ON");
 
-                await db.AddAsync(reviews);
-                await db.SaveChangesAsync();
-                
+            db.Set<Book>().AsNoTracking();
+            db.Entry(reviews).State = EntityState.Modified;
 
-                return await Task.FromResult<IActionResult>(RedirectToAction("Index"));
-            }
+            await db.AddAsync(reviews);
+            await db.SaveChangesAsync();
 
 
+            return await Task.FromResult<IActionResult>(RedirectToAction("Index"));
         }
-        
+
+
+
     }
+}

@@ -25,6 +25,8 @@
 
     <ItemGroup>
       <_ContentIncludedByDefault Remove="Pages\Account\Register.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Account\AcessDenied.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Account\AcessDenied.cshtml" />
     </ItemGroup>
 
 </Project>
