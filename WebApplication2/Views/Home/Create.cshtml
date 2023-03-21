@@ -17,10 +17,20 @@
             </div>
 
             <div class="mb-3 row">
+                <label asp-for="Description" class="form-label">Автор</label>
+                <input type="text" class="form-control" asp-for="Description">
+            </div>
+
+            <div class="mb-3 row">
+                <label asp-for="Description_facts" class="form-label">Автор</label>
+                <input type="text" class="form-control" asp-for="Description_facts">
+            </div>
+
+            <div class="mb-3 row">
                 <label asp-for="Author" class="form-label">Автор</label>
                 <input type="text" class="form-control" asp-for="Author.Name">
             </div>
-
+            
             <div class="mb-3 row">
                 <label asp-for="Tag" class="form-label">Жанр</label>
                 <input type="text" class="form-control" asp-for="Tag">
