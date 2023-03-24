@@ -16,7 +16,8 @@
           "Microsoft.EntityFrameworkCore.Tools": "7.0.2",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "7.0.3",
           "System.ServiceModel.Syndication": "8.0.0-preview.1.23110.8",
-          "System.Web.Http.Common": "4.0.20126.16343"
+          "System.Web.Http.Common": "4.0.20126.16343",
+          "jQuery": "3.6.4"
         },
         "runtime": {
           "WebApplication2.dll": {}
@@ -64,6 +65,7 @@
           }
         }
       },
+      "jQuery/3.6.4": {},
       "Microsoft.AspNetCore.Authentication.JwtBearer/7.0.2": {
         "dependencies": {
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "6.21.0"
@@ -2556,6 +2558,13 @@
       "sha512": "sha512-lQKvtaTDOXnoVJ20ibTuSIOf2i0uO0MPbDhd1jm238I+U/2ZnRENj0cktKZhtchBMtCUSRQ5v4xBCUbKNmyVMw==",
       "path": "humanizer.core/2.14.1",
       "hashPath": "humanizer.core.2.14.1.nupkg.sha512"
+    },
+    "jQuery/3.6.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6p9twP9WU+SPZPH5ArBBrXeesAEAlwuyw2tFbqcqQj5CARfh6R+v1216WkBGaeJJu7gZw2lLG+7Nh/XOylcsqg==",
+      "path": "jquery/3.6.4",
+      "hashPath": "jquery.3.6.4.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.JwtBearer/7.0.2": {
       "type": "package",

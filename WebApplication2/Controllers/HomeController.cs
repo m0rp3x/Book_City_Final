@@ -135,7 +135,7 @@ namespace WebApplication2.Controllers
         {
             db.AddRange(book);
             db.SaveChanges();
-            return Task.FromResult<IActionResult>(RedirectToAction("Index"));
+            return Task.FromResult<IActionResult>(RedirectToAction("Create"));
         }
 
 
@@ -210,8 +210,9 @@ namespace WebApplication2.Controllers
 
                 Order order = new Order();
                 order.Book = await db.Books.FirstOrDefaultAsync(p => p.ID == id);
-                if (order != null)
+                if (true)
                     return View(order);
+                
             }
 
 
