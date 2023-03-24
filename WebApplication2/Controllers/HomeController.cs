@@ -382,8 +382,25 @@ namespace WebApplication2.Controllers
 
             return await Task.FromResult<IActionResult>(RedirectToAction("Index"));
         }
+        
+        public IActionResult Search(string searchString)
+        {
+            var searchResults = db.Books
+                .Where(p => p.Name.Contains(searchString) || p.Description.Contains(searchString))
+                .Select(p => new SearchResult
+                {
+                    BookID = p.ID,
+                    Name = p.Name,
+                    Auth = p.Author.Name,
+                    Tags = p.Tag
+                })
+                .ToList();
 
+            ViewBag.SearchString = searchString;
 
+            return View("SearchResults", searchResults);
+        }
+       
 
     }
 }

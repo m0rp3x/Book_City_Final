@@ -1,0 +1,35 @@
+﻿@model List<SearchResult>
+
+<h2>Search Results</h2>
+
+@if (Model.Any())
+{
+    <table>
+        <thead>
+        <tr>
+            <th>Название</th>
+            <th>Жанр</th>
+            <th>Автор</th>
+            <th>Подробнее</th>
+        </tr>
+        </thead>
+        <tbody>
+            @foreach (var result in Model)
+            {
+                <tr>
+                    <td>@result.Name</td>
+                    <td>@result.Tags</td>
+                    <td>@result.Auth</td>
+                    <td>                <a asp-action="BookDetail" asp-controller="Home" asp-route-id="@result.BookID" class="button">Подробнее</a>
+
+                        </td>
+                </tr>
+                
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No results found.</p>
+}

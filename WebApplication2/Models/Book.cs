@@ -114,6 +114,17 @@ public class Reviews
     public int Stars { get; set; }
 }
 
+[NotMapped]
+public class SearchResult
+{
+    public int? BookID { get; set; }
+    public string Name { get; set; }
+    public string Auth { get; set; }
+    public string Tags { get; set; }
+}
+
+
+
 public enum SortState
 {
     NameAsc,

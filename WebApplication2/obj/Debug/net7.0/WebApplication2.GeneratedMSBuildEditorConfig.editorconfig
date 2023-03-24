@@ -9,89 +9,93 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WebApplication2
 build_property.RootNamespace = WebApplication2
-build_property.ProjectDir = C:\Users\koval\RiderProjects\WebApplication2\WebApplication2\
+build_property.ProjectDir = C:\Users\Юра\RiderProjects\Book_City_Final\WebApplication2\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\koval\RiderProjects\WebApplication2\WebApplication2
+build_property.MSBuildProjectDirectory = C:\Users\Юра\RiderProjects\Book_City_Final\WebApplication2
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/koval/RiderProjects/WebApplication2/WebApplication2/Views/Account/AcessDenied.cshtml]
+[C:/Users/Юра/RiderProjects/Book_City_Final/WebApplication2/Views/Account/AcessDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY2Vzc0RlbmllZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koval/RiderProjects/WebApplication2/WebApplication2/Views/Home/BookDetail.cshtml]
+[C:/Users/Юра/RiderProjects/Book_City_Final/WebApplication2/Views/Home/BookDetail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxCb29rRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koval/RiderProjects/WebApplication2/WebApplication2/Views/Home/Create.cshtml]
+[C:/Users/Юра/RiderProjects/Book_City_Final/WebApplication2/Views/Home/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koval/RiderProjects/WebApplication2/WebApplication2/Views/Home/Delete.cshtml]
+[C:/Users/Юра/RiderProjects/Book_City_Final/WebApplication2/Views/Home/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koval/RiderProjects/WebApplication2/WebApplication2/Views/Home/DeleteOrder.cshtml]
+[C:/Users/Юра/RiderProjects/Book_City_Final/WebApplication2/Views/Home/DeleteOrder.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZWxldGVPcmRlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koval/RiderProjects/WebApplication2/WebApplication2/Views/Home/Details.cshtml]
+[C:/Users/Юра/RiderProjects/Book_City_Final/WebApplication2/Views/Home/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koval/RiderProjects/WebApplication2/WebApplication2/Views/Home/Edit.cshtml]
+[C:/Users/Юра/RiderProjects/Book_City_Final/WebApplication2/Views/Home/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koval/RiderProjects/WebApplication2/WebApplication2/Views/Home/Index.cshtml]
+[C:/Users/Юра/RiderProjects/Book_City_Final/WebApplication2/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koval/RiderProjects/WebApplication2/WebApplication2/Views/Home/Order.cshtml]
+[C:/Users/Юра/RiderProjects/Book_City_Final/WebApplication2/Views/Home/Order.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxPcmRlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koval/RiderProjects/WebApplication2/WebApplication2/Views/Home/OrderList.cshtml]
+[C:/Users/Юра/RiderProjects/Book_City_Final/WebApplication2/Views/Home/OrderList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxPcmRlckxpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koval/RiderProjects/WebApplication2/WebApplication2/Views/Home/Privacy.cshtml]
+[C:/Users/Юра/RiderProjects/Book_City_Final/WebApplication2/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koval/RiderProjects/WebApplication2/WebApplication2/Views/Home/Reviews.cshtml]
+[C:/Users/Юра/RiderProjects/Book_City_Final/WebApplication2/Views/Home/Reviews.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZXZpZXdzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koval/RiderProjects/WebApplication2/WebApplication2/Views/Home/rss.cshtml]
+[C:/Users/Юра/RiderProjects/Book_City_Final/WebApplication2/Views/Home/rss.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxyc3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koval/RiderProjects/WebApplication2/WebApplication2/Views/Home/Support.cshtml]
+[C:/Users/Юра/RiderProjects/Book_City_Final/WebApplication2/Views/Home/SearchResults.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTZWFyY2hSZXN1bHRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Юра/RiderProjects/Book_City_Final/WebApplication2/Views/Home/Support.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTdXBwb3J0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koval/RiderProjects/WebApplication2/WebApplication2/Views/Home/_ViewImports.cshtml]
+[C:/Users/Юра/RiderProjects/Book_City_Final/WebApplication2/Views/Home/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koval/RiderProjects/WebApplication2/WebApplication2/Views/Shared/Error.cshtml]
+[C:/Users/Юра/RiderProjects/Book_City_Final/WebApplication2/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koval/RiderProjects/WebApplication2/WebApplication2/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Юра/RiderProjects/Book_City_Final/WebApplication2/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koval/RiderProjects/WebApplication2/WebApplication2/Views/_ViewImports.cshtml]
+[C:/Users/Юра/RiderProjects/Book_City_Final/WebApplication2/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koval/RiderProjects/WebApplication2/WebApplication2/Views/_ViewStart.cshtml]
+[C:/Users/Юра/RiderProjects/Book_City_Final/WebApplication2/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/koval/RiderProjects/WebApplication2/WebApplication2/Views/Shared/_Layout.cshtml]
+[C:/Users/Юра/RiderProjects/Book_City_Final/WebApplication2/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-amt9qciysm

@@ -23,6 +23,10 @@ namespace WebApplication2.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public DbSet<Reviews> Reviews { get; set; } = null!;
         public DbSet<Role?> Roles { get; set; } = null!;
+        
+        
+        public DbSet<SearchResult?> SearchResults { get; set; } = null!;
+
 
 
  

@@ -52,12 +52,16 @@
                         <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Support">Тех Поддержка</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="rss">Бета</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="rss">Новости</a>
                     </li>
-                    <li class="nav-item">
-                                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Reviews">ddd</a>
-
+                    <li class="nav-item ml-auto">
+                        <form class="d-flex" asp-controller="Home" asp-action="Search" method="get">
+                            <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Search" name="searchString">
+                            <button class="btn btn-outline-success" type="submit">Поиск</button>
+                        </form>
                     </li>
+                    
+                    
                     
                     
 
