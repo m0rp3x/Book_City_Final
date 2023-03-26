@@ -3,14 +3,14 @@
             <div class="col-12 col-md-4 col-xl-3 chat-list">
                 <div class="row">
                     <div class="col-12">
-                        <h4 class="text-center">Users</h4>
+                        <h4 class="text-center">Пользователи</h4>
                     </div>
                 </div>
                 <hr />
                 <div class="row">
                     <div class="col-12">
                         <ul class="list-group" id="userList">
-                            <li class="list-group-item disabled">Loading...</li>
+                            <li class="list-group-item disabled">Загрузка</li>
                         </ul>
                     </div>
                 </div>
@@ -18,7 +18,7 @@
             <div class="col-12 col-md-8 col-xl-9 chat-room">
                 <div class="row">
                     <div class="col-12">
-                        <h4 class="text-center">Chat Room</h4>
+                        <h4 class="text-center">Чат</h4>
                     </div>
                 </div>
                 <hr />
@@ -27,7 +27,7 @@
                         <div class="card" style="height: 60vh; overflow-y: auto;" id="chatroom">
                             <div class="card-body">
                                 <div class="text-center">
-                                    <span>Loading...</span>
+                                    <span></span>
                                 </div>
                             </div>
                         </div>
@@ -38,11 +38,11 @@
                     <div class="col-12">
                         <form>
                             <div class="form-group">
-                                <label for="userName">Username:</label>
+                                <label for="userName">Имя Пользователя:</label>
                                 <input type="text" class="form-control" id="userName" value="@User.Identity.Name" readonly />
                             </div>
                             <div class="form-group">
-                                <label for="message">Message:</label>
+                                <label for="message">Введите сообщение:</label>
                                 <textarea class="form-control" id="message" rows="3"></textarea>
                             </div>
                             <button type="button" class="btn btn-primary" id="sendBtn" disabled>Send</button>
@@ -97,6 +97,7 @@
     });
 
     hubConnection.on("Receive", function (message, userName) {
+        const isOutgoing = userName === document.getElementById("userName").textContent; // определяем, является ли сообщение исходящим
     
         // создаем элемент <b> для имени пользователя
         const userNameElem = document.createElement("b");
@@ -112,6 +113,11 @@
         const chatroom = document.getElementById("chatroom");
         chatroom.appendChild(elem);
     
+         // добавляем класс CSS для исходящих сообщений
+            if (isOutgoing) {
+                elem.classList.add("outgoing-message");
+            }
+        
         // удаляем старые элементы, если их слишком много
         const maxMessages = 50; // максимальное количество сообщений в списке
         const messages = chatroom.querySelectorAll(".message");
