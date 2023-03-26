@@ -1,49 +1,149 @@
-    <div>
-        Введите логин:<br />
-        <dl id="userName" type="text">@User.Identity.Name</dl>
-        Введите сообщение: <br />
-        <input type="text" id="message" /><br/><br/>
-        <input type="button" id="sendBtn" value="Отправить" disabled="disabled" />
+    <div class="container-fluid h-100">
+        <div class="row h-100">
+            <div class="col-12 col-md-4 col-xl-3 chat-list">
+                <div class="row">
+                    <div class="col-12">
+                        <h4 class="text-center">Users</h4>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-12">
+                        <ul class="list-group" id="userList">
+                            <li class="list-group-item disabled">Loading...</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-8 col-xl-9 chat-room">
+                <div class="row">
+                    <div class="col-12">
+                        <h4 class="text-center">Chat Room</h4>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card" style="height: 60vh; overflow-y: auto;" id="chatroom">
+                            <div class="card-body">
+                                <div class="text-center">
+                                    <span>Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-12">
+                        <form>
+                            <div class="form-group">
+                                <label for="userName">Username:</label>
+                                <input type="text" class="form-control" id="userName" value="@User.Identity.Name" readonly />
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message:</label>
+                                <textarea class="form-control" id="message" rows="3"></textarea>
+                            </div>
+                            <button type="button" class="btn btn-primary" id="sendBtn" disabled>Send</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div id="chatroom"></div>
+ 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
     <script>
-        const hubConnection = new signalR.HubConnectionBuilder()
-            .withUrl("/chat")
-            .build();
- 
-        document.getElementById("sendBtn").addEventListener("click", function () {
-            const userName = document.getElementById("userName").value;   // получаем введенное имя
-            const message = document.getElementById("message").value;
- 
-            hubConnection.invoke("Send", message, userName) // отправка данных серверу
-                .catch(function (err) {
-                    return console.error(err.toString());
-                });
+    const hubConnection = new signalR.HubConnectionBuilder()
+        .withUrl("/chat")
+        .build();
+
+    hubConnection.on("UserList", function (users) {
+        const userList = document.getElementById("userList");
+        userList.innerHTML = "";
+        users.forEach(function (user) {
+            const userElem = document.createElement("li");
+            userElem.textContent = user;
+            userList.appendChild(userElem);
         });
-        // получение данных с сервера
-        hubConnection.on("Receive", function (message, userName) {
- 
-            // создаем элемент <b> для имени пользователя
-            const userNameElem = document.createElement("b");
-            userNameElem.textContent = `${userName}: `;
- 
-            // создает элемент <p> для сообщения пользователя
+    });
+
+    hubConnection.on("ReceiveHistory", function (messages) {
+        const chatroom = document.getElementById("chatroom");
+        messages.forEach(function (message) {
+            const userNameElem = document.createElement("strong");
+            userNameElem.classList.add("me-2");
+            userNameElem.textContent = message.split(": ")[0] + ": ";
+
             const elem = document.createElement("p");
             elem.appendChild(userNameElem);
-            elem.appendChild(document.createTextNode(message));
- 
-            // добавляем новый элемент в самое начало
-            // для этого сначала получаем первый элемент
-            const firstElem = document.getElementById("chatroom").firstChild;
-            document.getElementById("chatroom").insertBefore(elem, firstElem);
+            elem.appendChild(document.createTextNode(message.split(": ")[1]));
+            elem.classList.add("mb-1");
+
+            chatroom.appendChild(elem);
         });
- 
-        hubConnection.start()
-            .then(function () {
-                document.getElementById("sendBtn").disabled = false;
-            })
+        chatroom.scrollTop = chatroom.scrollHeight;
+    });
+
+    document.getElementById("sendBtn").addEventListener("click", function () {
+        const userName = document.getElementById("userName").value;
+        const message = document.getElementById("message").value;
+
+        hubConnection.invoke("Send", message, userName)
             .catch(function (err) {
                 return console.error(err.toString());
             });
-    </script>
+    });
+
+    hubConnection.on("Receive", function (message, userName) {
+    
+        // создаем элемент <b> для имени пользователя
+        const userNameElem = document.createElement("b");
+        userNameElem.textContent = `${userName}: `;
+    
+        // создает элемент <p> для сообщения пользователя
+        const elem = document.createElement("p");
+        elem.classList.add("message");
+        elem.appendChild(userNameElem);
+        elem.appendChild(document.createTextNode(message));
+    
+        // добавляем новый элемент в конец списка
+        const chatroom = document.getElementById("chatroom");
+        chatroom.appendChild(elem);
+    
+        // удаляем старые элементы, если их слишком много
+        const maxMessages = 50; // максимальное количество сообщений в списке
+        const messages = chatroom.querySelectorAll(".message");
+        if (messages.length > maxMessages) {
+            for (let i = 0; i < messages.length - maxMessages; i++) {
+                messages[i].remove();
+            }
+        }
+    });
+
+    
+    // получение истории чата при подключении нового пользователя
+    hubConnection.on("History", function (history) {
+        const chatroom = document.getElementById("chatroom");
+        history.forEach(function (msg) {
+            const userNameElem = document.createElement("b");
+            userNameElem.textContent = `${msg.userName}: `;
+    
+            const elem = document.createElement("p");
+            elem.classList.add("message");
+            elem.appendChild(userNameElem);
+            elem.appendChild(document.createTextNode(msg.message));
+    
+            chatroom.appendChild(elem);
+        });
+    });
+    
+    hubConnection.start()
+        .then(function () {
+            document.getElementById("sendBtn").disabled = false;
+        })
+        .catch(function (err) {
+            return console.error(err.toString());
+        });
+</script>

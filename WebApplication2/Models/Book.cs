@@ -77,6 +77,7 @@ public class Order {
 }
 
 
+
 public class Account
 {
     public int Id { get; set; }
@@ -96,6 +97,8 @@ public class Role
         Accounts = new List<Account>();
     }
 }
+
+
 
 [PrimaryKey("RewID")]
 public class Reviews
