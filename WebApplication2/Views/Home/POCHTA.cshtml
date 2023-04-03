@@ -1,0 +1,24 @@
+﻿
+
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h4>Жалобы и Предложения</h4>
+            </div>
+            <div class="card-body">
+                <form asp-controller="Home" asp-action="POCHTA" method="post">
+                    <div class="form-group">
+                        <label for="call">Тема</label>
+                        <input type="text" class="form-control" id="call" name="call" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="body">Письмо</label>
+                        <textarea class="form-control" id="body" name="body" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>

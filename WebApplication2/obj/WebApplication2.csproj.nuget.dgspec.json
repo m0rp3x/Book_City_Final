@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\koval\\RiderProjects\\WebApplication2\\WebApplication2\\WebApplication2.csproj": {}
+    "C:\\Users\\Юра\\RiderProjects\\Book_City_Final\\WebApplication2\\WebApplication2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\koval\\RiderProjects\\WebApplication2\\WebApplication2\\WebApplication2.csproj": {
+    "C:\\Users\\Юра\\RiderProjects\\Book_City_Final\\WebApplication2\\WebApplication2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\koval\\RiderProjects\\WebApplication2\\WebApplication2\\WebApplication2.csproj",
+        "projectUniqueName": "C:\\Users\\Юра\\RiderProjects\\Book_City_Final\\WebApplication2\\WebApplication2.csproj",
         "projectName": "WebApplication2",
-        "projectPath": "C:\\Users\\koval\\RiderProjects\\WebApplication2\\WebApplication2\\WebApplication2.csproj",
-        "packagesPath": "C:\\Users\\koval\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\koval\\RiderProjects\\WebApplication2\\WebApplication2\\obj\\",
+        "projectPath": "C:\\Users\\Юра\\RiderProjects\\Book_City_Final\\WebApplication2\\WebApplication2.csproj",
+        "packagesPath": "C:\\Users\\Юра\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Юра\\RiderProjects\\Book_City_Final\\WebApplication2\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\koval\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Юра\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -102,7 +107,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\koval\\.dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }

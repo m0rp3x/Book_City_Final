@@ -2,10 +2,12 @@
 using Microsoft.EntityFrameworkCore;
 using WebApplication2.Models;
 using System.Linq;
+using System.Net;
 using System.ServiceModel.Syndication;
 using System.Xml;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.Net.Mail;
 
 namespace WebApplication2.Controllers
 {
@@ -212,7 +214,7 @@ namespace WebApplication2.Controllers
                 order.Book = await db.Books.FirstOrDefaultAsync(p => p.ID == id);
                 if (true)
                     return View(order);
-                
+
             }
 
 
@@ -383,7 +385,7 @@ namespace WebApplication2.Controllers
 
             return await Task.FromResult<IActionResult>(RedirectToAction("Index"));
         }
-        
+
         public IActionResult Search(string searchString)
         {
             var searchResults = db.Books
@@ -401,7 +403,40 @@ namespace WebApplication2.Controllers
 
             return View("SearchResults", searchResults);
         }
-       
 
+        public async Task<IActionResult> POCHTA(string from, string to, string body, string call)
+        {
+            try
+            {
+
+                from = "kovalevasvetlana@live.com";
+                var password = "";
+                to = "KovalevYUV20@st.ithub.ru";
+                MailMessage message = new MailMessage();
+                message.From = new MailAddress(from);
+                message.To.Add(new MailAddress(to));
+                message.Subject = call;
+                message.Body = body;
+                SmtpClient smtpClient = new SmtpClient("smtp-mail.outlook.com");
+                smtpClient.Port = 587;
+                smtpClient.EnableSsl = true;
+                smtpClient.UseDefaultCredentials = false;
+                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtpClient.Credentials = new NetworkCredential(from, password);
+                smtpClient.Send(message);
+
+                return View();
+            }
+            catch
+            {
+                return View(ERROR);
+            }
+
+            IActionResult ERROR()
+            {
+                return View();
+            }
+
+        }
     }
 }
