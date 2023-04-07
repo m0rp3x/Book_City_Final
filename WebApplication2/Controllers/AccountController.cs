@@ -1,9 +1,12 @@
-﻿using System.Security.Claims;
+﻿using System.Net;
+using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebApplication2.Models;
+using System.Net.Mail;
+
 
 namespace WebApplication2.Controllers
 {
@@ -68,6 +71,24 @@ namespace WebApplication2.Controllers
 
                 var UE = new Account { Email = Email, Password = Password, Role = defaultRole };
                 db.Accounts.Add(UE);
+                
+                
+                var from = "kovalevasvetlana@live.com";
+                var password = "16092009aB";
+                var to = Email;
+                MailMessage message = new MailMessage();
+                message.From = new MailAddress(from);
+                message.To.Add(new MailAddress(to));
+                message.Subject = "Вы педик";
+                message.Body = "ГЫГЫГЫГЫ";
+                SmtpClient smtpClient = new SmtpClient("smtp-mail.outlook.com");
+                smtpClient.Port = 587;
+                smtpClient.EnableSsl = true;
+                smtpClient.UseDefaultCredentials = false;
+                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtpClient.Credentials = new NetworkCredential(from, password);
+                smtpClient.Send(message);
+                
                 await db.SaveChangesAsync();
 
                 await Authenticate(Email, UE.Role?.Name); // аутентификация
